@@ -4,3 +4,4 @@ dist
 audit/editor/fixture.tsx
 audit/editor/fixture.map.json
 audit/editor/highlighting/
+*.vsix

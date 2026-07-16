@@ -8,3 +8,10 @@ src/**
 .nvmrc
 .editorConfig
 build.mjs
+audit/**
+docs/**
+.superpowers/**
+.husky/**
+RELEASING.md
+.prettierignore
+*.vsix

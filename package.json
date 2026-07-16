@@ -3,12 +3,12 @@
   "displayName": "vscode-styled-components",
   "description": "Syntax highlighting for styled-components",
   "version": "1.8.0",
-  "publisher": "styled-components",
+  "publisher": "your-publisher-id",
   "icon": "logo.png",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/styled-components/vscode-styled-components.git"
+    "url": "https://github.com/kauricre/vscode-styled-components.git"
   },
   "main": "dist/extension.js",
   "engines": {
@@ -93,7 +93,6 @@
   },
   "dependencies": {
     "@styled/typescript-styled-plugin": "^1.0.0",
-    "culori": "^4.0.2",
     "vscode-css-languageservice": "^6.3.10"
   },
   "devDependencies": {
@@ -103,6 +102,7 @@
     "@types/vscode": "^1.73.1",
     "@vscode/test-electron": "^2.2.0",
     "css-latest": "npm:vscode-css-languageservice@^6.3.10",
+    "culori": "^4.0.2",
     "esbuild": "^0.19.9",
     "glob": "7.1.6",
     "husky": "^7.0.4",
