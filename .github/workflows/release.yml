@@ -22,7 +22,3 @@ jobs:
         run: npx vsce publish -p $VSCE_TOKEN
         env:
           VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
-      - name: Publish to Open VSX
-        run: npx ovsx publish -p $OVSX_TOKEN
-        env:
-          OVSX_TOKEN: ${{ secrets.OVSX_TOKEN }}

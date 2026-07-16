@@ -9,10 +9,6 @@
 1. A VS Code Marketplace **publisher** (create at the Marketplace management page).
 2. Set `package.json` `"publisher"` to that id.
 3. A **Personal Access Token** (Azure DevOps) with **Marketplace → Manage** scope.
-4. **Open VSX** (Cursor/VSCodium/Windsurf): an [open-vsx.org](https://open-vsx.org)
-   access token (GitHub login + Eclipse publisher agreement), the `kauricre`
-   namespace claimed once via `npx ovsx create-namespace kauricre -p <token>`,
-   and the token stored as GitHub Actions secret `OVSX_TOKEN`.
 
 ## Version
 
@@ -30,10 +26,6 @@ Release is **published**.
    default branch.
 3. Create a Git tag and a **GitHub Release** for it (e.g. `v1.8.0`). Publishing the
    release triggers the workflow, which builds and publishes to the Marketplace.
-4. The same workflow also publishes to **Open VSX**. The steps are
-   independent: if the Open VSX step fails after the Marketplace publish
-   succeeded, fix the cause and publish manually —
-   `npx ovsx publish -p <token>` — do NOT re-publish the GitHub Release.
 
 ## Publish — Option B: manual
 
