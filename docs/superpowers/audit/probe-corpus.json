@@ -1,0 +1,82 @@
+[
+  {
+    "feature": "overlay",
+    "layer": "validation",
+    "probe": "corpus-diagnostics",
+    "symptom": "Unknown property: 'overlay'",
+    "evidence": ".x { overlay: auto; }  (severity 2)",
+    "fixLocation": "dependency: bump vscode-css-languageservice inside @styled/typescript-styled-plugin"
+  },
+  {
+    "feature": "field-sizing",
+    "layer": "validation",
+    "probe": "corpus-diagnostics",
+    "symptom": "Unknown property: 'field-sizing'",
+    "evidence": ".x { field-sizing: content; }  (severity 2)",
+    "fixLocation": "dependency: bump vscode-css-languageservice inside @styled/typescript-styled-plugin"
+  },
+  {
+    "feature": "text-wrap-balance",
+    "layer": "validation",
+    "probe": "corpus-diagnostics",
+    "symptom": "Unknown property: 'text-wrap'",
+    "evidence": ".x { text-wrap: balance; }  (severity 2)",
+    "fixLocation": "dependency: bump vscode-css-languageservice inside @styled/typescript-styled-plugin"
+  },
+  {
+    "feature": "text-box",
+    "layer": "validation",
+    "probe": "corpus-diagnostics",
+    "symptom": "Unknown property: 'text-box'",
+    "evidence": ".x { text-box: trim-both cap alphabetic; }  (severity 2)",
+    "fixLocation": "dependency: bump vscode-css-languageservice inside @styled/typescript-styled-plugin"
+  },
+  {
+    "feature": "anchor-name",
+    "layer": "validation",
+    "probe": "corpus-diagnostics",
+    "symptom": "Unknown property: 'anchor-name'",
+    "evidence": ".x { anchor-name: --a; }  (severity 2)",
+    "fixLocation": "dependency: bump vscode-css-languageservice inside @styled/typescript-styled-plugin"
+  },
+  {
+    "feature": "transition-behavior",
+    "layer": "validation",
+    "probe": "corpus-diagnostics",
+    "symptom": "Unknown property: 'transition-behavior'",
+    "evidence": ".x { transition-behavior: allow-discrete; }  (severity 2)",
+    "fixLocation": "dependency: bump vscode-css-languageservice inside @styled/typescript-styled-plugin"
+  },
+  {
+    "feature": "container",
+    "layer": "validation",
+    "probe": "corpus-diagnostics",
+    "symptom": "Unknown property: 'container-type'",
+    "evidence": ".wrap { container-type: inline-size; } @container (min-width: 400px) { .x { color: red; } }  (severity 2)",
+    "fixLocation": "dependency: bump vscode-css-languageservice inside @styled/typescript-styled-plugin"
+  },
+  {
+    "feature": "container",
+    "layer": "validation",
+    "probe": "corpus-diagnostics",
+    "symptom": "Unknown at rule @container",
+    "evidence": ".wrap { container-type: inline-size; } @container (min-width: 400px) { .x { color: red; } }  (severity 2)",
+    "fixLocation": "dependency: bump vscode-css-languageservice inside @styled/typescript-styled-plugin"
+  },
+  {
+    "feature": "scope",
+    "layer": "validation",
+    "probe": "corpus-diagnostics",
+    "symptom": "Unknown at rule @scope",
+    "evidence": "@scope (.x) to (.y) { .z { color: red; } }  (severity 2)",
+    "fixLocation": "dependency: bump vscode-css-languageservice inside @styled/typescript-styled-plugin"
+  },
+  {
+    "feature": "starting-style",
+    "layer": "validation",
+    "probe": "corpus-diagnostics",
+    "symptom": "Unknown at rule @starting-style",
+    "evidence": "@starting-style { .x { opacity: 0; } }  (severity 2)",
+    "fixLocation": "dependency: bump vscode-css-languageservice inside @styled/typescript-styled-plugin"
+  }
+]
