@@ -6,8 +6,10 @@ const toRgb = converter("rgb");
 const FUNC =
   /\b(?:rgba?|hsla?|hwb|lab|lch|oklab|oklch|color)\((?:[^()]*|\([^()]*\))*\)/gi;
 const HEX = /#[0-9a-fA-F]{3,8}\b/g;
-// named colour after ':' , ',' or '(' — the last catches first args of
-// color-mix()/light-dark(); culori.parse filters out non-colour words.
+// Named colour after ':' , ',' or '('. The '(' also swatches the FIRST colour
+// argument of any function (color-mix/light-dark, but also e.g. the first stop of
+// a gradient) and makes `transparent` swatch — an intentional superset of the old
+// allowlist. culori.parse gates it, so non-colour words (all, block, url…) match nothing.
 const NAMED = /(?<=[:,(]\s*)[a-zA-Z]+(?![\w-])/g;
 const REL =
   /\b(?:rgba?|hsla?|hwb|lab|lch|oklab|oklch|color)\(\s*from\s+([a-zA-Z]+|#[0-9a-fA-F]{3,8})/gi;
