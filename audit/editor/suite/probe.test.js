@@ -13,8 +13,6 @@ const outPath = path.resolve(
   "../../../docs/superpowers/audit/editor-findings.json"
 );
 
-const scopeHasCss = (t) =>
-  /(^|\s)source\.css|\.css($|\s|\.)|\.scss($|\s|\.)/.test(t);
 const inRange = (line, entry) =>
   line >= entry.startLine && line <= entry.endLine;
 
