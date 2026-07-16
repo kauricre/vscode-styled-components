@@ -26,7 +26,8 @@
     "watch": "node ./build.mjs --watch",
     "vscode:prepublish": "node ./build.mjs --production",
     "prepare": "husky install",
-    "audit:recon": "node audit/recon.js"
+    "audit:recon": "node audit/recon.js",
+    "audit:data": "node audit/probe-data.js"
   },
   "activationEvents": [
     "onLanguage:typescriptreact",
