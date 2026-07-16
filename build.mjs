@@ -12,6 +12,10 @@ const context = await esbuild
     sourcemap: !production,
     minify: production,
     platform: "node",
+    // Prefer packages' ESM builds: vscode-css-languageservice's "main" is a
+    // UMD/AMD bundle whose internal define([...]) relative requires esbuild
+    // can't inline, which breaks activation; its "module" (ESM) bundles cleanly.
+    mainFields: ["module", "main"],
     target: "ES2022",
     plugins: [
       {
