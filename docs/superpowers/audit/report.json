@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-16",
   "bundledVersion": "6.2.4",
-  "bundledPath": "/Users/renatokauric/Projects/Work/PorscheDigital/vscode-styled-components/node_modules/vscode-css-languageservice",
+  "bundledPath": "node_modules/vscode-css-languageservice",
   "latestVersion": "6.3.10",
   "corpusSize": 22,
   "editorProbeRan": false,

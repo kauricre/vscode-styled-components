@@ -1,4 +1,5 @@
 "use strict";
+const path = require("path");
 const { resolvePluginCss, resolveLatestCss } = require("./resolve");
 
 const names = (list) => list.map((x) => x.name);
@@ -26,9 +27,10 @@ function diffProviders(bundledMod, latestMod) {
 function runDataProbe() {
   const plugin = resolvePluginCss();
   const latest = resolveLatestCss();
+  const repoRoot = path.resolve(__dirname, "..");
   return {
     bundledVersion: plugin.version,
-    bundledPath: plugin.dir,
+    bundledPath: path.relative(repoRoot, plugin.dir),
     latestVersion: latest.version,
     missing: diffProviders(plugin.mod, latest.mod),
   };

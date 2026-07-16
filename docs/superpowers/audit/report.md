@@ -1,7 +1,7 @@
 # Modern CSS Audit Report
 
 **Generated:** 2026-07-16
-**Plugin css-languageservice:** 6.2.4 (`/Users/renatokauric/Projects/Work/PorscheDigital/vscode-styled-components/node_modules/vscode-css-languageservice`)
+**Plugin css-languageservice:** 6.2.4 (`node_modules/vscode-css-languageservice`)
 **Latest css-languageservice:** 6.3.10
 **Editor probe ran:** no (highlighting/color layers not measured this run)
 

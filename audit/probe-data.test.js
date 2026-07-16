@@ -1,7 +1,8 @@
 "use strict";
 const test = require("node:test");
 const assert = require("node:assert");
-const { diffProviders } = require("./probe-data");
+const path = require("node:path");
+const { diffProviders, runDataProbe } = require("./probe-data");
 
 // Fake css-languageservice modules exposing only getDefaultCSSDataProvider().
 function fakeMod(props, ats, pcs, pes) {
@@ -34,4 +35,9 @@ test("diff is case-insensitive and ignores order", () => {
   const bundled = fakeMod(["Color"], [], [], []);
   const latest = fakeMod(["color"], [], [], []);
   assert.deepStrictEqual(diffProviders(bundled, latest).properties, []);
+});
+
+test("runDataProbe reports a repo-relative bundledPath", () => {
+  const result = runDataProbe();
+  assert.ok(!path.isAbsolute(result.bundledPath));
 });
