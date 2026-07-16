@@ -5,7 +5,7 @@ import {
   Range,
   ColorPresentation,
 } from "vscode";
-import { formatHex, formatRgb, formatHsl } from "culori";
+const { formatHex, formatHex8, formatRgb, formatHsl } = require("culori");
 const { findColors } = require("./colorMatch");
 
 export const colorProvider = {
@@ -17,8 +17,12 @@ export const colorProvider = {
       b: color.blue,
       alpha: color.alpha,
     };
+    const hex =
+      rgb.alpha === undefined || rgb.alpha === 1
+        ? formatHex(rgb)
+        : formatHex8(rgb);
     return [
-      new ColorPresentation(formatHex(rgb)),
+      new ColorPresentation(hex),
       new ColorPresentation(formatRgb(rgb)),
       new ColorPresentation(formatHsl(rgb)),
     ];
