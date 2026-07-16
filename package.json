@@ -27,7 +27,8 @@
     "vscode:prepublish": "node ./build.mjs --production",
     "prepare": "husky install",
     "audit:recon": "node audit/recon.js",
-    "audit:data": "node audit/probe-data.js"
+    "audit:data": "node audit/probe-data.js",
+    "audit:corpus": "node audit/probe-corpus.js"
   },
   "activationEvents": [
     "onLanguage:typescriptreact",
