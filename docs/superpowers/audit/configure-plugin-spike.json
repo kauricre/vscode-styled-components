@@ -1,0 +1,15 @@
+{
+  "phase1_diagAppeared": true,
+  "phase2_diagGoneAfterConfigure": true,
+  "notes": [
+    "getAPI(0).configurePlugin available: true"
+  ],
+  "apiAvailable": true,
+  "phase1_diags": [
+    "ts|2307|Cannot find module 'styled-components' or its corresponding type declarations.",
+    "ts-styled-plugin|9999|Unknown property: 'colr'"
+  ],
+  "phase2_diags": [
+    "ts|2307|Cannot find module 'styled-components' or its corresponding type declarations."
+  ]
+}

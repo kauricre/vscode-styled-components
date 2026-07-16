@@ -1,0 +1,116 @@
+[
+  {
+    "id": "control",
+    "cssHighlighted": true,
+    "missingProps": [],
+    "afterLeaked": false,
+    "afterScope": "source.tsx meta.var.expr.tsx meta.var-single-variable.expr.tsx meta.definition.variable.tsx variable.other.constant.tsx"
+  },
+  {
+    "id": "gh159a-generic-inline",
+    "cssHighlighted": true,
+    "missingProps": [],
+    "afterLeaked": false,
+    "afterScope": "source.tsx meta.var.expr.tsx meta.var-single-variable.expr.tsx meta.definition.variable.tsx variable.other.constant.tsx"
+  },
+  {
+    "id": "gh159b-generic-named",
+    "cssHighlighted": true,
+    "missingProps": [],
+    "afterLeaked": false,
+    "afterScope": "source.tsx meta.var.expr.tsx meta.var-single-variable.expr.tsx meta.definition.variable.tsx variable.other.constant.tsx"
+  },
+  {
+    "id": "gh159c-generic-styled-call",
+    "cssHighlighted": true,
+    "missingProps": [],
+    "afterLeaked": false,
+    "afterScope": "source.tsx meta.var.expr.tsx meta.var-single-variable.expr.tsx meta.definition.variable.tsx variable.other.constant.tsx"
+  },
+  {
+    "id": "gh358-generic-multiline",
+    "cssHighlighted": true,
+    "missingProps": [],
+    "afterLeaked": false,
+    "afterScope": "source.tsx meta.var.expr.tsx meta.type.parameters.tsx meta.object.type.tsx meta.field.declaration.tsx meta.definition.property.tsx variable.object.property.tsx"
+  },
+  {
+    "id": "gh292-attrs-props",
+    "cssHighlighted": true,
+    "missingProps": [],
+    "afterLeaked": false,
+    "afterScope": "source.tsx meta.var.expr.tsx variable.other.constant.ts"
+  },
+  {
+    "id": "gh425-css-helper",
+    "cssHighlighted": true,
+    "missingProps": [],
+    "afterLeaked": false,
+    "afterScope": "source.tsx meta.var.expr.tsx meta.var-single-variable.expr.tsx meta.definition.variable.tsx variable.other.constant.tsx"
+  },
+  {
+    "id": "gh127-wrapped-call",
+    "cssHighlighted": true,
+    "missingProps": [],
+    "afterLeaked": false,
+    "afterScope": "source.tsx meta.var.expr.tsx meta.var-single-variable.expr.tsx meta.definition.variable.tsx variable.other.constant.tsx"
+  },
+  {
+    "id": "gh328-multiline-call",
+    "cssHighlighted": true,
+    "missingProps": [],
+    "afterLeaked": false,
+    "afterScope": "source.tsx meta.var.expr.tsx variable.other.constant.tsx"
+  },
+  {
+    "id": "gh196-fn-wrap",
+    "cssHighlighted": true,
+    "missingProps": [],
+    "afterLeaked": false,
+    "afterScope": "source.tsx meta.var.expr.tsx meta.function-call.tsx entity.name.function.tsx"
+  },
+  {
+    "id": "gh303-custom-tag",
+    "cssHighlighted": false,
+    "missingProps": [
+      "box-sizing"
+    ],
+    "afterLeaked": false,
+    "afterScope": "source.tsx meta.var.expr.tsx meta.var-single-variable.expr.tsx meta.definition.variable.tsx variable.other.constant.tsx",
+    "tokenDump": "import→source.tsx meta.import.tsx keyword.control.import.tsx | myStyled→source.tsx meta.import.tsx variable.other.readwrite.alias.tsx | from→source.tsx meta.import.tsx keyword.control.from.tsx | \"→source.tsx meta.import.tsx string.quoted.double.tsx punctuation.definition.string.begin.tsx | styled-components→source.tsx meta.import.tsx string.quoted.double.tsx | \"→source.tsx meta.import.tsx string.quoted.double.tsx punctuation.definition.string.end.tsx | ;→source.tsx punctuation.terminator.statement.tsx | export→source.tsx meta.var.expr.tsx keyword.control.export.tsx | const→source.tsx meta.var.expr.tsx storage.type.tsx | T→source.tsx meta.var.expr.tsx meta.var-single-variable.expr.tsx meta.definition.variable.tsx variable.other.constant.tsx | =→source.tsx meta.var.expr.tsx keyword.operator.assignment.tsx | myStyled→source.tsx meta.var.expr.tsx variable.other.object.tsx | .→source.tsx meta.var.expr.tsx punctuation.accessor.tsx | div→source.tsx meta.var.expr.tsx entity.name.function.tagged-template.tsx | `→source.tsx meta.var.expr.tsx string.template.tsx punctuation.definition.string.template.begin.tsx | box-sizing: border-box;→source.tsx meta.var.expr.tsx string.template.tsx | `→source.tsx meta.var.expr.tsx string.template.tsx punctuation.definition.string.template.end.tsx | ;→source.tsx punctuation.terminator.statement.tsx | const→source.tsx meta.var.expr.tsx storage.type.tsx | AFTER_OK→source.tsx meta.var.expr.tsx meta.var-single-variable.expr.tsx meta.definition.variable.tsx variable.other.constant.tsx | =→source.tsx meta.var.expr.tsx keyword.operator.assignment.tsx | 1→source.tsx meta.var.expr.tsx constant.numeric.decimal.tsx | ;→source.tsx punctuation.terminator.statement.tsx"
+  },
+  {
+    "id": "guard-midline",
+    "cssHighlighted": false,
+    "missingProps": [
+      "color"
+    ],
+    "afterLeaked": null,
+    "afterScope": "(no AFTER_OK token found)",
+    "tokenDump": "declare→source.tsx meta.var.expr.tsx storage.modifier.tsx | const→source.tsx meta.var.expr.tsx storage.type.tsx | wrap→source.tsx meta.var.expr.tsx meta.var-single-variable.expr.tsx meta.definition.variable.tsx variable.other.constant.tsx entity.name.function.tsx | :→source.tsx meta.var.expr.tsx meta.var-single-variable.expr.tsx meta.type.annotation.tsx keyword.operator.type.annotation.tsx | (→source.tsx meta.var.expr.tsx meta.var-single-variable.expr.tsx meta.type.annotation.tsx meta.type.function.tsx meta.parameters.tsx punctuation.definition.parameters.begin.tsx | s→source.tsx meta.var.expr.tsx meta.var-single-variable.expr.tsx meta.type.annotation.tsx meta.type.function.tsx meta.parameters.tsx variable.parameter.tsx | :→source.tsx meta.var.expr.tsx meta.var-single-variable.expr.tsx meta.type.annotation.tsx meta.type.function.tsx meta.parameters.tsx meta.type.annotation.tsx keyword.operator.type.annotation.tsx | TemplateStringsArray→source.tsx meta.var.expr.tsx meta.var-single-variable.expr.tsx meta.type.annotation.tsx meta.type.function.tsx meta.parameters.tsx meta.type.annotation.tsx entity.name.type.tsx | )→source.tsx meta.var.expr.tsx meta.var-single-variable.expr.tsx meta.type.annotation.tsx meta.type.function.tsx meta.parameters.tsx punctuation.definition.parameters.end.tsx | =>→source.tsx meta.var.expr.tsx meta.var-single-variable.expr.tsx meta.type.annotation.tsx meta.type.function.return.tsx storage.type.function.arrow.tsx | string→source.tsx meta.var.expr.tsx meta.var-single-variable.expr.tsx meta.type.annotation.tsx meta.type.function.return.tsx support.type.primitive.tsx | ;→source.tsx punctuation.terminator.statement.tsx | export→source.tsx meta.var.expr.tsx keyword.control.export.tsx | const→source.tsx meta.var.expr.tsx storage.type.tsx | midline→source.tsx meta.var.expr.tsx meta.var-single-variable.expr.tsx meta.definition.variable.tsx variable.other.constant.tsx | =→source.tsx meta.var.expr.tsx keyword.operator.assignment.tsx | wrap→source.tsx meta.var.expr.tsx meta.function-call.tsx entity.name.function.tsx | (→source.tsx meta.var.expr.tsx meta.brace.round.tsx | 1→source.tsx meta.var.expr.tsx constant.numeric.decimal.tsx | )→source.tsx meta.var.expr.tsx meta.brace.round.tsx | `→source.tsx meta.var.expr.tsx string.template.tsx punctuation.definition.string.template.begin.tsx | color: blue;→source.tsx meta.var.expr.tsx string.template.tsx | `→source.tsx meta.var.expr.tsx string.template.tsx punctuation.definition.string.template.end.tsx | ;→source.tsx punctuation.terminator.statement.tsx"
+  },
+  {
+    "id": "demo-dump",
+    "cssHighlighted": false,
+    "missingProps": [
+      "zzz-force-dump"
+    ],
+    "afterLeaked": null,
+    "afterScope": "(no AFTER_OK token found)",
+    "tokenDump": "//→source.tsx comment.line.double-slash.tsx punctuation.definition.comment.tsx | DEMO 1 — upstream #328 fix: multiline styled() call→source.tsx comment.line.double-slash.tsx | //→source.tsx comment.line.double-slash.tsx punctuation.definition.comment.tsx | BEFORE 1.9.0: the template of NewContainer below rendered as one flat→source.tsx comment.line.double-slash.tsx | //→source.tsx comment.line.double-slash.tsx punctuation.definition.comment.tsx | string colour — no CSS highlighting at all.→source.tsx comment.line.double-slash.tsx | //→source.tsx comment.line.double-slash.tsx punctuation.definition.comment.tsx | NOW: property names and values inside it are CSS-highlighted, same as→source.tsx comment.line.double-slash.tsx | //→source.tsx comment.line.double-slash.tsx punctuation.definition.comment.tsx | the single-line Base component above it.→source.tsx comment.line.double-slash.tsx | import→source.tsx meta.import.tsx keyword.control.import.tsx | styled→source.tsx meta.import.tsx variable.other.readwrite.alias.tsx | from→source.tsx meta.import.tsx keyword.control.from.tsx | \"→source.tsx meta.import.tsx string.quoted.double.tsx punctuation.definition.string.begin.tsx | styled-components→source.tsx meta.import.tsx string.quoted.double.tsx | \"→source.tsx meta.import.tsx string.quoted.double.tsx punctuation.definition.string.end.tsx | ;→source.tsx punctuation.terminator.statement.tsx | const→source.tsx meta.var.expr.tsx storage.type.tsx | Base→source.tsx meta.var.expr.tsx meta.var-single-variable.expr.tsx meta.definition.variable.tsx variable.other.constant.tsx | =→source.tsx meta.var.expr.tsx keyword.operator.assignment.tsx | styled→source.tsx meta.var.expr.tsx variable.other.object.ts | .→source.tsx meta.var.expr.tsx punctuation.accessor.ts | div→source.tsx meta.var.expr.tsx variable.other.property.ts | `→source.tsx meta.var.expr.tsx punctuation.definition.string.template.begin.js string.template.js | color→source.tsx meta.var.expr.tsx source.css.scss meta.property-name.scss support.type.property-name.css | :→source.tsx meta.var.expr.tsx source.css.scss punctuation.separator.key-value.scss | red→source.tsx meta.var.expr.tsx source.css.scss meta.property-value.scss support.constant.color.w3c-standard-color-name.css | ;→source.tsx meta.var.expr.tsx source.css.scss punctuation.terminator.rule.scss | `→source.tsx meta.var.expr.tsx punctuation.definition.string.template.end.js string.template.js | ;→source.tsx punctuation.terminator.statement.tsx | export→source.tsx meta.var.expr.tsx keyword.control.export.tsx | const→source.tsx meta.var.expr.tsx storage.type.tsx | NewContainer→source.tsx meta.var.expr.tsx meta.var-single-variable.expr.tsx meta.definition.variable.tsx variable.other.constant.tsx | =→source.tsx meta.var.expr.tsx keyword.operator.assignment.tsx | styled→source.tsx meta.var.expr.tsx meta.function-call.tsx entity.name.function.tsx | (→source.tsx meta.var.expr.tsx meta.brace.round.tsx | Base→source.tsx meta.var.expr.tsx variable.other.readwrite.tsx | )→source.tsx meta.var.expr.tsx | `→source.tsx meta.var.expr.tsx punctuation.definition.string.template.begin.js string.template.js | box-sizing→source.tsx meta.var.expr.tsx source.css.scss meta.property-name.scss support.type.property-name.css | :→source.tsx meta.var.expr.tsx source.css.scss punctuation.separator.key-value.scss | border-box→source.tsx meta.var.expr.tsx source.css.scss meta.property-value.scss support.constant.property-value.css | ;→source.tsx meta.var.expr.tsx source.css.scss punctuation.terminator.rule.scss | background→source.tsx meta.var.expr.tsx source.css.scss meta.property-name.scss support.type.property-name.css | :→source.tsx meta.var.expr.tsx source.css.scss punctuation.separator.key-value.scss | oklch→source.tsx meta.var.expr.tsx source.css.scss meta.property-value.scss | (→source.tsx meta.var.expr.tsx source.css.scss meta.property-value.scss punctuation.definition.begin.bracket.round.scss | 62→source.tsx meta.var.expr.tsx source.css.scss meta.property-value.scss constant.numeric.css | %→source.tsx meta.var.expr.tsx source.css.scss meta.property-value.scss constant.numeric.css keyword.other.unit.percentage.css | 0.19→source.tsx meta.var.expr.tsx source.css.scss meta.property-value.scss constant.numeric.css | 25→source.tsx meta.var.expr.tsx source.css.scss meta.property-value.scss constant.numeric.css | )→source.tsx meta.var.expr.tsx source.css.scss meta.property-value.scss punctuation.definition.end.bracket.round.scss | ;→source.tsx meta.var.expr.tsx source.css.scss punctuation.terminator.rule.scss | `→source.tsx meta.var.expr.tsx punctuation.definition.string.template.end.js string.template.js | ;→source.tsx meta.var.expr.tsx | //→source.tsx meta.var.expr.tsx comment.line.double-slash.tsx punctuation.definition.comment.tsx | KNOWN TRADE-OFF (you approved this; documented in README known-limitations):→source.tsx meta.var.expr.tsx comment.line.double-slash.tsx | //→source.tsx meta.var.expr.tsx comment.line.double-slash.tsx punctuation.definition.comment.tsx | the `const` keyword on the next line may lose its keyword colour — the same→source.tsx meta.var.expr.tsx comment.line.double-slash.tsx | //→source.tsx meta.var.expr.tsx comment.line.double-slash.tsx punctuation.definition.comment.tsx | degradation class that already existed after multiline .attrs()/generics.→source.tsx meta.var.expr.tsx comment.line.double-slash.tsx | const→source.tsx meta.var.expr.tsx variable.other.readwrite.tsx | afterTheComponent→source.tsx meta.var.expr.tsx variable.other.readwrite.tsx | =→source.tsx meta.var.expr.tsx keyword.operator.assignment.tsx | 1→source.tsx meta.var.expr.tsx constant.numeric.decimal.tsx | ;→source.tsx meta.var.expr.tsx | //→source.tsx meta.var.expr.tsx comment.line.double-slash.tsx punctuation.definition.comment.tsx | GUARD — a mid-line ')' before a backtick must stay a plain string (no CSS→source.tsx meta.var.expr.tsx comment.line.double-slash.tsx | //→source.tsx meta.var.expr.tsx comment.line.double-slash.tsx punctuation.definition.comment.tsx | colours inside this template):→source.tsx meta.var.expr.tsx comment.line.double-slash.tsx | declare→source.tsx meta.var.expr.tsx variable.other.readwrite.tsx | const→source.tsx meta.var.expr.tsx variable.other.readwrite.tsx | wrap→source.tsx meta.var.expr.tsx variable.other.readwrite.tsx | :→source.tsx meta.var.expr.tsx | (→source.tsx meta.var.expr.tsx meta.arrow.tsx meta.parameters.tsx punctuation.definition.parameters.begin.tsx | s→source.tsx meta.var.expr.tsx meta.arrow.tsx meta.parameters.tsx variable.parameter.tsx | :→source.tsx meta.var.expr.tsx meta.arrow.tsx meta.parameters.tsx meta.type.annotation.tsx keyword.operator.type.annotation.tsx | TemplateStringsArray→source.tsx meta.var.expr.tsx meta.arrow.tsx meta.parameters.tsx meta.type.annotation.tsx entity.name.type.tsx | )→source.tsx meta.var.expr.tsx meta.arrow.tsx meta.parameters.tsx punctuation.definition.parameters.end.tsx | =>→source.tsx meta.var.expr.tsx meta.arrow.tsx storage.type.function.arrow.tsx | string→source.tsx meta.var.expr.tsx variable.other.readwrite.tsx | ;→source.tsx meta.var.expr.tsx | export→source.tsx meta.var.expr.tsx variable.other.readwrite.tsx | const→source.tsx meta.var.expr.tsx variable.other.readwrite.tsx | midline→source.tsx meta.var.expr.tsx variable.other.readwrite.tsx | =→source.tsx meta.var.expr.tsx keyword.operator.assignment.tsx | wrap→source.tsx meta.var.expr.tsx meta.function-call.tsx entity.name.function.tsx | (→source.tsx meta.var.expr.tsx meta.brace.round.tsx | 1→source.tsx meta.var.expr.tsx constant.numeric.decimal.tsx | )→source.tsx meta.var.expr.tsx meta.brace.round.tsx | `→source.tsx meta.var.expr.tsx string.template.tsx punctuation.definition.string.template.begin.tsx | color: blue;→source.tsx meta.var.expr.tsx string.template.tsx | `→source.tsx meta.var.expr.tsx string.template.tsx punctuation.definition.string.template.end.tsx | ;→source.tsx meta.var.expr.tsx"
+  },
+  {
+    "id": "gh446-call-form",
+    "cssHighlighted": true,
+    "missingProps": [],
+    "afterLeaked": false,
+    "afterScope": "source.tsx meta.var.expr.tsx meta.var-single-variable.expr.tsx meta.definition.variable.tsx variable.other.constant.tsx"
+  },
+  {
+    "id": "gh407-namespace-generic",
+    "cssHighlighted": true,
+    "missingProps": [],
+    "afterLeaked": false,
+    "afterScope": "source.tsx meta.var.expr.tsx meta.var-single-variable.expr.tsx meta.definition.variable.tsx variable.other.constant.tsx"
+  }
+]
