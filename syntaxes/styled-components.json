@@ -75,7 +75,7 @@
     },
     {
       "contentName": "source.css.scss",
-      "begin": "(?:}>|\\)\\))(`)",
+      "begin": "(?:}>|\\)\\)|^\\s*\\))(`)",
       "beginCaptures": {
         "1": {
           "name": "punctuation.definition.string.template.begin.js string.template.js"
