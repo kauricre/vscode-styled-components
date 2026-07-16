@@ -12,10 +12,10 @@ Uses a CSS grammar built on top of [language-sass](https://github.com/atom/langu
 
 ## Install
 
-Inside VSCode, press `Ctrl+P`, and enter (replace `your-publisher-id` with this fork's Marketplace publisher):
+Inside VSCode, press `Ctrl+P`, and enter:
 
 ```
-ext install your-publisher-id.vscode-styled-components
+ext install kauricre.vscode-styled-components
 ```
 
 Or build and install locally from source:
