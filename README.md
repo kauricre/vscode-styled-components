@@ -15,7 +15,7 @@ Uses a CSS grammar built on top of [language-sass](https://github.com/atom/langu
 Inside VSCode, press `Ctrl+P`, and enter:
 
 ```
-ext install kauricre.vscode-styled-components
+ext install kauricre.vscode-styled-components-modern
 ```
 
 Or build and install locally from source:
