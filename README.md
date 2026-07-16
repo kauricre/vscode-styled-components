@@ -48,13 +48,16 @@ modern CSS. This fork:
   modern-CSS corpus.
 - **Verified against upstream's loudest bug reports.** We generated fixtures
   from the exact repro code of the top-voted upstream highlighting issues and
-  token-probed this fork (VS Code 1.129.0, 2026-07-16 —
+  token-probed this fork (VS Code 1.129.0, 2026-07-16, pre-1.9.0 baseline —
   [raw results](./docs/superpowers/audit/upstream-issues-probe.json)).
   Verified working in this fork: TypeScript generics on `styled.div<{…}>`
-  (upstream #159, #436, #442), multiline prop types (#358), `.attrs()` with
+  (upstream #159, #442), multiline prop types (#358), `.attrs()` with
   props callbacks (#292), nested `` css`…` `` helpers (#425), wrapped calls
-  like `styled(hof("div"))` (#127, #196), and multiline
-  `styled(\n Component \n)` calls (#328 — fixed in 1.9.0).
+  like `styled(hof("div"))` (#127, #196). Multiline `styled( Component )`
+  calls (#328) show as broken in that baseline probe and are fixed in 1.9.0,
+  with a regression fixture
+  (`src/tests/suite/colorize-fixtures/multiline-styled-call.ts`) guarding
+  the fix.
 - **Covers more file types.** Color swatches and the template snippet work in
   plain `.ts` / `.js` files (the `styles.ts` pattern), `.vue`, `.svelte`, and
   untitled buffers — not just `.tsx`/`.jsx` on disk.
