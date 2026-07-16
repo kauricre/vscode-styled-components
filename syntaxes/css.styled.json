@@ -1128,6 +1128,17 @@
         },
         {
           "include": "source.css#functional-pseudo-classes"
+        },
+        {
+          "match": "(?<!:)(:)([a-zA-Z][\\w-]*)",
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.entity.css"
+            },
+            "2": {
+              "name": "entity.other.attribute-name.pseudo-class.css"
+            }
+          }
         }
       ]
     },

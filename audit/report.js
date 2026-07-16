@@ -27,20 +27,15 @@ function autocompleteFindings(dataDiff) {
 
 function editorToFindings(editorFindings) {
   const out = [];
-  for (const layer of ["highlighting", "color"]) {
-    for (const f of (editorFindings && editorFindings[layer]) || []) {
-      out.push({
-        feature: f.feature,
-        layer,
-        probe: "editor",
-        symptom: f.symptom,
-        evidence: f.evidence,
-        fixLocation:
-          layer === "color"
-            ? "src/colorProvider.ts (regex + d3-color do not handle this color syntax)"
-            : "syntaxes/*.json (TextMate grammar)",
-      });
-    }
+  for (const f of (editorFindings && editorFindings.highlighting) || []) {
+    out.push({
+      feature: f.feature,
+      layer: "highlighting",
+      probe: "editor",
+      symptom: f.symptom,
+      evidence: f.evidence,
+      fixLocation: "syntaxes/*.json (TextMate grammar)",
+    });
   }
   return out;
 }
@@ -49,6 +44,7 @@ function buildReport({
   dataDiff,
   corpusFindings,
   editorFindings,
+  colorFindings = [],
   corpus = CORPUS,
   dateISO,
 }) {
@@ -56,6 +52,7 @@ function buildReport({
     ...corpusFindings,
     ...autocompleteFindings(dataDiff),
     ...editorToFindings(editorFindings),
+    ...colorFindings,
   ];
   const summary = { validation: 0, autocomplete: 0, highlighting: 0, color: 0 };
   for (const f of findings) summary[f.layer]++;
@@ -126,6 +123,8 @@ function writeReport(outDir, dateISO) {
   const editorFindings = readJsonIfExists(
     path.join(outDir, "editor-findings.json")
   );
+  const colorFindings =
+    readJsonIfExists(path.join(outDir, "probe-color.json")) || [];
   if (!dataDiff)
     throw new Error("probe-data.json missing — run audit/run.js first");
 
@@ -133,6 +132,7 @@ function writeReport(outDir, dateISO) {
     dataDiff,
     corpusFindings,
     editorFindings,
+    colorFindings,
     dateISO,
   });
   fs.writeFileSync(path.join(outDir, "report.md"), md);

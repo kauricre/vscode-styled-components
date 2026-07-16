@@ -1,5 +1,14 @@
 # Release Notes
 
+## 1.8.0 (16-07-2026)
+
+Modernises CSS support to 2026 standards (maintained fork).
+
+- **Validation & autocomplete:** updated the bundled CSS language service (6.2.4 → 6.3.10), so modern properties, values, and at-rules are recognised and suggested — no more false "unknown property" errors on `overlay`, `field-sizing`, `text-wrap`, `@container`, `@scope`, `@starting-style`, and more.
+- **Color swatches:** inline color decorations now work for modern color functions — `oklch()`, `oklab()`, `hwb()`, `lab()`, `lch()`, relative color (`rgb(from …)`), and the inner colors of `color-mix()` / `light-dark()`. Color handling migrated from `d3-color` to `culori`.
+- **Highlighting:** `:popover-open` and other newer pseudo-classes are now highlighted (generic pseudo-class fallback in the grammar).
+- **Internal:** added a modern-CSS audit harness (`audit/`) that measures support across validation, autocomplete, highlighting, and color layers for regression tracking.
+
 ## 1.7.8 (03-04-2023)
 
 - Bug fix, update typescript styled plugin to re-enable auto completion

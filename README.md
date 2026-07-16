@@ -1,11 +1,8 @@
-**NOTE**: _Sadly this repository is no longer supported or updated by the Styled Components team as of June 2024. If you wish to help develop this code please reach out on Discord or in the [issue](https://github.com/styled-components/vscode-styled-components/issues/275). We can unarchive this repo if we get contributors but until then it will remain the way it is._
-
 # vscode-styled-components
 
-Styled Components has moved! Make sure you're downloading it from here:
-https://marketplace.visualstudio.com/items?itemName=styled-components.vscode-styled-components. The `jpoissonnier.vscode-styled-components ` version will recieve no more updates.
-
-<a href="https://discord.gg/hfGUrbrxaU">![Discord](https://img.shields.io/discord/818449605409767454?logo=discord)</a>
+> **Maintained fork.** This is an actively-maintained fork of the (archived) upstream [styled-components/vscode-styled-components](https://github.com/styled-components/vscode-styled-components), refreshed for 2026 CSS standards: modern properties, at-rules (`@container`, `@scope`, `@starting-style`, …), color functions (`oklch()`, `oklab()`, `color-mix()`, relative color), and newer pseudo-classes (`:popover-open`) are recognised, highlighted, and (where applicable) colour-swatched. See the [CHANGELOG](./CHANGELOG.md).
+>
+> Source: https://github.com/kauricre/vscode-styled-components
 
 Syntax highlighting and IntelliSense for [styled-components](https://github.com/styled-components/styled-components).
 
@@ -15,15 +12,21 @@ Uses a CSS grammar built on top of [language-sass](https://github.com/atom/langu
 
 ## Install
 
-Inside VSCode, press `Ctrl+P`, and enter:
+Inside VSCode, press `Ctrl+P`, and enter (replace `your-publisher-id` with this fork's Marketplace publisher):
 
 ```
-ext install vscode-styled-components
+ext install your-publisher-id.vscode-styled-components
 ```
 
-It should be the top result.
+Or build and install locally from source:
 
-[[Source](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components)]
+```
+npm install && npx vsce package
+```
+
+then run **Extensions: Install from VSIX…** on the generated `.vsix`.
+
+[[Source](https://github.com/kauricre/vscode-styled-components)]
 
 ## Features
 
