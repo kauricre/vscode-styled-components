@@ -1,9 +1,8 @@
 # Releasing
 
-> ⚠️ **Before publishing:** `package.json` `publisher` is currently the placeholder
-> **`your-publisher-id`**. Replace it with your real VS Code Marketplace publisher id
-> (see `https://marketplace.visualstudio.com/manage/publishers/`). Publishing fails
-> until this is set to a publisher you own.
+> **Publisher:** `package.json` `publisher` is set to **`kauricre`**. It must match a
+> VS Code Marketplace publisher you own (see
+> `https://marketplace.visualstudio.com/manage/publishers/`) or publishing will fail.
 
 ## Prerequisites (one-time)
 
@@ -32,7 +31,7 @@ Release is **published**.
 
 ```
 npm install
-npx vsce login <your-publisher-id>   # paste the PAT when prompted
+npx vsce login kauricre              # paste the PAT when prompted
 npx vsce publish                     # or: npx vsce publish minor
 ```
 
@@ -40,7 +39,7 @@ npx vsce publish                     # or: npx vsce publish minor
 
 ```
 npm install
-npx vsce package                     # → your-publisher-id.vscode-styled-components-<version>.vsix
+npx vsce package                     # → kauricre.vscode-styled-components-<version>.vsix
 ```
 
 Install via **Extensions: Install from VSIX…**. `.vsix` files are git-ignored.
