@@ -13,21 +13,13 @@
 ## Version
 
 Bump `version` in `package.json` and add a `CHANGELOG.md` entry (this repo is at
-**1.8.0**). Use semver: new backward-compatible features → minor bump.
+**1.9.0**). Use semver: new backward-compatible features → minor bump.
 
-## Publish — Option A: GitHub Release (CI, recommended)
+## Publish (manual)
 
-`.github/workflows/release.yml` runs `vsce publish -p $VSCE_TOKEN` when a GitHub
-Release is **published**.
-
-1. In the fork's GitHub repo: **Settings → Secrets and variables → Actions** → add
-   secret `VSCE_TOKEN` = your PAT.
-2. Ensure `publisher` is set (not the placeholder) and the version is bumped, on the
-   default branch.
-3. Create a Git tag and a **GitHub Release** for it (e.g. `v1.8.0`). Publishing the
-   release triggers the workflow, which builds and publishes to the Marketplace.
-
-## Publish — Option B: manual
+> Releases are published **manually by the maintainer** — an owner decision.
+> Do not (re)add CI auto-publish workflows. Tag + GitHub Release are still
+> created afterwards for the record, but they do not trigger anything.
 
 ```
 npm install
