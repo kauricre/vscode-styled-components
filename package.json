@@ -100,7 +100,7 @@
     "@types/mocha": "^9.0.0",
     "@types/node": "^18.11.9",
     "@types/vscode": "^1.73.1",
-    "@vscode/test-electron": "^2.2.0",
+    "@vscode/test-electron": "^2.5.2",
     "css-latest": "npm:vscode-css-languageservice@^6.3.10",
     "culori": "^4.0.2",
     "esbuild": "^0.19.9",
