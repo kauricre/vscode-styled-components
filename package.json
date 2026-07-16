@@ -94,7 +94,7 @@
   "dependencies": {
     "@styled/typescript-styled-plugin": "^1.0.0",
     "d3-color": "^3.1.0",
-    "vscode-css-languageservice": "^6.2.1"
+    "vscode-css-languageservice": "^6.3.10"
   },
   "devDependencies": {
     "@types/d3-color": "^3.1.0",

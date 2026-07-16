@@ -11,10 +11,22 @@ test("known-good CSS produces no diagnostics", () => {
   assert.strictEqual(diags.length, 0);
 });
 
-test("the reported overlay property produces an 'Unknown property' diagnostic on the stale engine", () => {
-  const diags = validateCss(mod, ".x { overlay: auto; }", "scss");
+test("a genuinely unknown property still produces an 'Unknown property' diagnostic (detection mechanism works, version-independent)", () => {
+  const diags = validateCss(
+    mod,
+    ".x { xyzzy-not-a-real-property: 1; }",
+    "scss"
+  );
   assert.ok(
     diags.some((d) => /unknown property/i.test(d.message)),
+    JSON.stringify(diags)
+  );
+});
+
+test("the previously-unknown 'overlay' property is recognized after the css-languageservice bump (no unknown-property diagnostic)", () => {
+  const diags = validateCss(mod, ".x { overlay: auto; }", "scss");
+  assert.ok(
+    !diags.some((d) => /unknown property/i.test(d.message)),
     JSON.stringify(diags)
   );
 });
