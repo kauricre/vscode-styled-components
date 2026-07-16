@@ -9,32 +9,32 @@ Build a reproducible audit harness that measures how well this fork of
 **categorized report** naming each gap, its symptom, and its root-cause layer.
 
 The report is the deliverable. It exists to answer one question with evidence:
-*where, exactly, is the plugin behind, and what would fix each gap?*
+_where, exactly, is the plugin behind, and what would fix each gap?_
 
 ### Non-goals (this spec)
 
 - **No fixes.** No dependency bumps, no TextMate grammar edits, no
-  `colorProvider` changes. The audit only *observes and reports*.
+  `colorProvider` changes. The audit only _observes and reports_.
 - **No editor UX changes.** We do not touch activation, commands, or settings.
 - **No new runtime features.** The harness is dev/CI tooling, not shipped in the
   packaged extension.
 
 Fixes become a **follow-up spec** informed by this report — e.g. we will know
 whether bumping `vscode-css-languageservice` alone resolves most validation
-gaps *before* writing any fix code.
+gaps _before_ writing any fix code.
 
 ## How it works today
 
 This repository has **two independent layers** that a naive reader conflates:
 
-| Concern | Who owns it | Lives in |
-|---|---|---|
-| Syntax highlighting | TextMate grammars in **this repo** | `syntaxes/*.json` |
-| "expand template string" snippet | This repo | `src/completionItemProvider.ts` |
-| Inline color swatches | This repo | `src/colorProvider.ts` (+ `d3-color`) |
-| Colon/semicolon-on-Enter helper | This repo | `src/insertColonCommand.ts` (only in-repo importer of `vscode-css-languageservice`, via `getDefaultCSSDataProvider`) |
-| **CSS validation** ("unknown property: overlay") | **`@styled/typescript-styled-plugin`** (a TypeScript Server plugin, registered at `package.json:68-73`) | separate package + `vscode-css-languageservice` |
-| **CSS autocomplete** (property/value suggestions) | Same TS Server plugin | separate package + `vscode-css-languageservice` |
+| Concern                                           | Who owns it                                                                                             | Lives in                                                                                                             |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Syntax highlighting                               | TextMate grammars in **this repo**                                                                      | `syntaxes/*.json`                                                                                                    |
+| "expand template string" snippet                  | This repo                                                                                               | `src/completionItemProvider.ts`                                                                                      |
+| Inline color swatches                             | This repo                                                                                               | `src/colorProvider.ts` (+ `d3-color`)                                                                                |
+| Colon/semicolon-on-Enter helper                   | This repo                                                                                               | `src/insertColonCommand.ts` (only in-repo importer of `vscode-css-languageservice`, via `getDefaultCSSDataProvider`) |
+| **CSS validation** ("unknown property: overlay")  | **`@styled/typescript-styled-plugin`** (a TypeScript Server plugin, registered at `package.json:68-73`) | separate package + `vscode-css-languageservice`                                                                      |
+| **CSS autocomplete** (property/value suggestions) | Same TS Server plugin                                                                                   | separate package + `vscode-css-languageservice`                                                                      |
 
 **Verified:** `grep -rn "Diagnostic" src/` returns nothing. This repository
 emits **zero CSS diagnostics of its own**. The `overlay` red-squiggle the user
@@ -48,7 +48,7 @@ Relevant pinned versions (`package.json`):
 
 The **diagnostic path uses the `vscode-css-languageservice` bundled inside the
 TS plugin**, which may differ from the extension's top-level `^6.2.1`. The
-harness must resolve and report the version the plugin *actually* uses, or it
+harness must resolve and report the version the plugin _actually_ uses, or it
 measures the wrong dictionary.
 
 ## Analysis
@@ -63,10 +63,10 @@ a fix in one layer does nothing for another:
 
 Two complementary detection strategies cover this:
 
-- **Data-diff** answers *"what is in the plugin's dictionary?"* — exhaustive for
+- **Data-diff** answers _"what is in the plugin's dictionary?"_ — exhaustive for
   the validation/autocomplete vocabulary, but blind to highlighting and color.
-- **Behavioral corpus** answers *"given realistic modern CSS, what does the
-  plugin actually do?"* — catches value-level, selector-level, highlighting, and
+- **Behavioral corpus** answers _"given realistic modern CSS, what does the
+  plugin actually do?"_ — catches value-level, selector-level, highlighting, and
   color behavior that raw data-diff misses.
 
 **Conclusion: we need both, and the behavioral corpus must run through the real
@@ -182,8 +182,8 @@ it legitimately exercises more than one layer.
   `audit` (all three).
 - **Report output:**
   - `docs/superpowers/audit/YYYY-MM-DD-report.md` — human-readable, categorized
-    by layer. Each finding: *feature · symptom · root-cause layer · evidence
-    (exact diagnostic message / missing token) · suggested fix location*. Plus
+    by layer. Each finding: _feature · symptom · root-cause layer · evidence
+    (exact diagnostic message / missing token) · suggested fix location_. Plus
     summary counts per layer (e.g. "N properties missing from bundled data").
   - `docs/superpowers/audit/YYYY-MM-DD-report.json` — machine-readable, for
     diffing and future regression tracking.
@@ -205,12 +205,12 @@ it legitimately exercises more than one layer.
 
 - **Bundled-version resolution.** If npm hoists css-languageservice so the plugin
   shares the top-level copy, Probe A's "bundled vs latest" is really "top-level
-  vs latest." The harness must detect and state which case holds. *Mitigation:*
+  vs latest." The harness must detect and state which case holds. _Mitigation:_
   resolve via `require.resolve` from the plugin's entry and report the resolved
   path + version.
 - **CSS extraction fidelity (Probe B).** The engine-level proxy strips/placeholders
   `${...}` interpolations with a simple heuristic, not the plugin's exact logic.
-  Accepted tradeoff (see Decision). *Mitigation:* keep fixtures interpolation-light
+  Accepted tradeoff (see Decision). _Mitigation:_ keep fixtures interpolation-light
   where the feature under test allows, and document the extraction rule.
 - **TS-server timing (Probe C).** Diagnostics via the real plugin are async; we
   deliberately keep diagnostics in Probe B (Node) and limit Probe C to
@@ -222,14 +222,14 @@ it legitimately exercises more than one layer.
 
 ## Reference table
 
-| File / path | Role |
-|---|---|
-| `package.json:68-73` | Registers `@styled/typescript-styled-plugin` as a TS Server plugin |
-| `package.json:91` | Extension's top-level `vscode-css-languageservice ^6.2.1` |
-| `src/extension.ts:17-43` | Extension activation — completion, color, colon helper; no diagnostics |
-| `src/colorProvider.ts` | Owns inline color swatches (Probe C target) |
-| `src/insertColonCommand.ts:2` | Only in-repo `vscode-css-languageservice` import |
-| `syntaxes/*.json` | TextMate grammars — owns highlighting (Probe C target) |
-| `src/tests/` | Existing `@vscode/test-electron` + mocha suite (Probe C host) |
-| `audit/` (new) | Harness scripts + corpus |
-| `docs/superpowers/audit/` (new) | Report output (`.md` + `.json`) |
+| File / path                     | Role                                                                   |
+| ------------------------------- | ---------------------------------------------------------------------- |
+| `package.json:68-73`            | Registers `@styled/typescript-styled-plugin` as a TS Server plugin     |
+| `package.json:91`               | Extension's top-level `vscode-css-languageservice ^6.2.1`              |
+| `src/extension.ts:17-43`        | Extension activation — completion, color, colon helper; no diagnostics |
+| `src/colorProvider.ts`          | Owns inline color swatches (Probe C target)                            |
+| `src/insertColonCommand.ts:2`   | Only in-repo `vscode-css-languageservice` import                       |
+| `syntaxes/*.json`               | TextMate grammars — owns highlighting (Probe C target)                 |
+| `src/tests/`                    | Existing `@vscode/test-electron` + mocha suite (Probe C host)          |
+| `audit/` (new)                  | Harness scripts + corpus                                               |
+| `docs/superpowers/audit/` (new) | Report output (`.md` + `.json`)                                        |
