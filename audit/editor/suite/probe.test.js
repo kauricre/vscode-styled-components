@@ -24,9 +24,11 @@ suite("editor audit probe", () => {
 
     // --- Highlighting: one construct per file (captureSyntaxTokens has no
     // positions), so every token in a per-feature fixture belongs to that construct.
-    // A construct is a real gap only if the tokens carrying its identifier have NO
-    // CSS/SCSS scope. (The old substring check failed because the grammar splits
-    // "@container" into "@" + "container" — no single token contains "@container".) ---
+    // A construct is a real gap only if NO token carries the scope-kind the grammar
+    // is expected to assign it (at-rule / pseudo-class / tag.reference). Checking
+    // for the scope kind — rather than matching the identifier's text — avoids
+    // false negatives when the grammar splits an identifier across tokens, and
+    // false positives from short identifiers matching unrelated CSS tokens. ---
     const highlighting = [];
     for (const entry of map.filter((e) => e.expectedLayer === "highlighting")) {
       const file = path.resolve(
@@ -40,18 +42,17 @@ suite("editor audit probe", () => {
         "_workbench.captureSyntaxTokens",
         Uri.file(file)
       );
-      const id = identifier(entry.feature);
-      const matches = (tokens || []).filter((tk) => tk.c && tk.c.includes(id));
-      const cssMatches = matches.filter((tk) => scopeHasCss(tk.t));
-      if (cssMatches.length === 0) {
+      const want = expectedScope(entry.feature);
+      const scoped = (tokens || []).filter((tk) => tk.t && tk.t.includes(want));
+      if (scoped.length === 0) {
+        const dump = (tokens || [])
+          .filter((tk) => tk.c && tk.c.trim())
+          .map((tk) => `${tk.c.trim()}→${tk.t}`)
+          .join(" | ");
         highlighting.push({
           feature: entry.feature,
-          symptom: matches.length
-            ? `'${id}' tokens present but none CSS-scoped`
-            : `'${id}' not found as a token`,
-          evidence: `${entry.css} | observed scopes: ${
-            matches.map((m) => m.t).join(" || ") || "(no matching token)"
-          }`,
+          symptom: `no token scoped '${want}' — construct not recognized`,
+          evidence: `${entry.css} | observed tokens: ${dump}`,
         });
       }
     }
@@ -86,17 +87,16 @@ suite("editor audit probe", () => {
   });
 });
 
-// The distinctive identifier of each construct (without @ or :), used to locate its
-// tokens in the construct's own per-feature fixture.
-function identifier(feature) {
-  const ids = {
-    container: "container",
-    layer: "layer",
-    scope: "scope",
-    "starting-style": "starting-style",
-    nesting: "&",
-    has: "has",
-    "popover-open": "popover-open",
+// The scope-kind a correctly-highlighted construct must produce.
+function expectedScope(feature) {
+  const kinds = {
+    container: "at-rule",
+    layer: "at-rule",
+    scope: "at-rule",
+    "starting-style": "at-rule",
+    has: "pseudo-class",
+    "popover-open": "pseudo-class",
+    nesting: "tag.reference",
   };
-  return ids[feature] || feature;
+  return kinds[feature] || feature;
 }
