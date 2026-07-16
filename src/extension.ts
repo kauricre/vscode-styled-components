@@ -10,8 +10,12 @@ import { provideCompletionItems } from "./completionItemProvider";
 import { enterKeyEvent } from "./insertColonCommand";
 
 export const documentSelector: DocumentSelector = [
-  { scheme: "file", language: "typescriptreact" },
-  { scheme: "file", language: "javascriptreact" },
+  "typescript",
+  "javascript",
+  "typescriptreact",
+  "javascriptreact",
+  "vue",
+  "svelte",
 ];
 
 export function activate(context: ExtensionContext) {

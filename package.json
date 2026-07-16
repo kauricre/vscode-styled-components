@@ -45,8 +45,12 @@
     "audit": "node audit/run.js && npm run audit:editor && node audit/report.js"
   },
   "activationEvents": [
+    "onLanguage:typescript",
+    "onLanguage:javascript",
     "onLanguage:typescriptreact",
-    "onLanguage:javascriptreact"
+    "onLanguage:javascriptreact",
+    "onLanguage:vue",
+    "onLanguage:svelte"
   ],
   "contributes": {
     "languages": [
