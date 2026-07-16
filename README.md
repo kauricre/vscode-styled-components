@@ -51,7 +51,8 @@ modern CSS. This fork:
   token-probed this fork (VS Code 1.129.0, 2026-07-16, pre-1.9.0 baseline —
   [raw results](./docs/superpowers/audit/upstream-issues-probe.json)).
   Verified working in this fork: TypeScript generics on `styled.div<{…}>`
-  (upstream #159, #442), multiline prop types (#358), `.attrs()` with
+  (upstream #159; #442 via the probe's `afterLeaked` no-scope-leak
+  measurement), multiline prop types (#358), `.attrs()` with
   props callbacks (#292), nested `` css`…` `` helpers (#425), wrapped calls
   like `styled(hof("div"))` (#127, #196). Multiline `styled( Component )`
   calls (#328) show as broken in that baseline probe and are fixed in 1.9.0,
@@ -72,6 +73,12 @@ modern CSS. This fork:
   type argument is highlighted, the TypeScript syntax colouring of code
   after that component can be slightly degraded — a TextMate grammar
   architecture limit inherited from upstream's continuation patterns.
+- **Colour swatches outside styled templates:** colour decorations are
+  currently document-wide, so colour-shaped text outside styled templates —
+  hex strings, URL fragments like `/docs#aabbcc`, issue references in
+  comments — can get a swatch. Scoping swatches to styled templates is
+  tracked as backlog item 5 in
+  [the improvement backlog](./docs/superpowers/specs/2026-07-16-improvement-backlog.md).
 - Some IntelliSense quirks live in the bundled
   [`@styled/typescript-styled-plugin`](https://github.com/styled-components/typescript-styled-plugin),
   not this extension, and are not fixable here: `var(` completing as
@@ -107,7 +114,7 @@ see [Contributing](./CONTRIBUTING.md)
 
 Highlighting requires the default import to be named `styled` (custom names
 are a planned feature — see Known limitations). Also make sure the file's
-language is `typescript(react)` / `javascript(react)`.
+language is `typescript(react)` / `javascript(react)`, `vue`, or `svelte`.
 
 ### Emmet tab completion isn't working
 
