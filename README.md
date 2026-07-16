@@ -25,10 +25,6 @@ Uses a CSS grammar built on top of [language-sass](https://github.com/atom/langu
 ext install kauricre.vscode-styled-components-modern
 ```
 
-**Cursor / VSCodium / Windsurf** — the extension is published to
-[Open VSX](https://open-vsx.org/extension/kauricre/vscode-styled-components-modern)
-under the same id; install it from your editor's extension view.
-
 **From source:**
 
 ```

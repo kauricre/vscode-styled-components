@@ -66,6 +66,10 @@ repo was unmaintained, not because the bugs all still exist.
 ### Tier 1 — Distribution
 
 **1. Publish to Open VSX.**
+**REJECTED 2026-07-16 (owner decision):** the fork will not distribute on
+Open VSX for privacy-related reasons. The analysis below is kept for the
+record; the wiring built for it during release 1.9.0 was reverted. VS Code
+Marketplace remains the only distribution channel.
 Verified via the Open VSX API: upstream `styled-components.vscode-styled-components`
 is on Open VSX **frozen at 1.7.8 with 81,628 downloads**. 1.7.8 is the version
 with the documented TypeScript 5 IntelliSense clash (README troubleshooting)
