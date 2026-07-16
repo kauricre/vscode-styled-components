@@ -39,7 +39,7 @@ npx vsce publish                     # or: npx vsce publish minor
 
 ```
 npm install
-npx vsce package                     # → kauricre.vscode-styled-components-<version>.vsix
+npx vsce package                     # → vscode-styled-components-modern-<version>.vsix
 ```
 
 Install via **Extensions: Install from VSIX…**. `.vsix` files are git-ignored.
