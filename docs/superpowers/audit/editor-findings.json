@@ -1,34 +1,9 @@
 {
   "highlighting": [
     {
-      "feature": "container",
-      "symptom": "token '@container' not found in CSS scope",
-      "evidence": ".wrap { container-type: inline-size; } @container (min-width: 400px) { .x { color: red; } }"
-    },
-    {
-      "feature": "layer",
-      "symptom": "token '@layer' not found in CSS scope",
-      "evidence": "@layer base { .x { color: red; } }"
-    },
-    {
-      "feature": "scope",
-      "symptom": "token '@scope' not found in CSS scope",
-      "evidence": "@scope (.x) to (.y) { .z { color: red; } }"
-    },
-    {
-      "feature": "starting-style",
-      "symptom": "token '@starting-style' not found in CSS scope",
-      "evidence": "@starting-style { .x { opacity: 0; } }"
-    },
-    {
-      "feature": "has",
-      "symptom": "token ':has' not found in CSS scope",
-      "evidence": ".x:has(> .y) { color: red; }"
-    },
-    {
       "feature": "popover-open",
-      "symptom": "token ':popover-open' not found in CSS scope",
-      "evidence": ".x:popover-open { color: red; }"
+      "symptom": "'popover-open' not found as a token",
+      "evidence": ".x:popover-open { color: red; } | observed scopes: (no matching token)"
     }
   ],
   "color": [

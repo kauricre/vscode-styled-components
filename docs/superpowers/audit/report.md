@@ -11,7 +11,7 @@
 |---|---|
 | Validation | 0 |
 | Autocomplete | 0 |
-| Highlighting | 6 |
+| Highlighting | 1 |
 | Color | 5 |
 
 > Note: Highlighting findings are heuristic (token-scope detection) and warrant human confirmation. The corpus is a curated sample for the highlighting/color layers; Probe A's data-diff is the exhaustive backstop for validation/autocomplete.
@@ -28,12 +28,7 @@ _No findings._
 
 | Feature | Symptom | Evidence | Fix location |
 |---|---|---|---|
-| `container` | token '@container' not found in CSS scope | `.wrap { container-type: inline-size; } @container (min-width: 400px) { .x { color: red; } }` | syntaxes/*.json (TextMate grammar) |
-| `layer` | token '@layer' not found in CSS scope | `@layer base { .x { color: red; } }` | syntaxes/*.json (TextMate grammar) |
-| `scope` | token '@scope' not found in CSS scope | `@scope (.x) to (.y) { .z { color: red; } }` | syntaxes/*.json (TextMate grammar) |
-| `starting-style` | token '@starting-style' not found in CSS scope | `@starting-style { .x { opacity: 0; } }` | syntaxes/*.json (TextMate grammar) |
-| `has` | token ':has' not found in CSS scope | `.x:has(> .y) { color: red; }` | syntaxes/*.json (TextMate grammar) |
-| `popover-open` | token ':popover-open' not found in CSS scope | `.x:popover-open { color: red; }` | syntaxes/*.json (TextMate grammar) |
+| `popover-open` | 'popover-open' not found as a token | `.x:popover-open { color: red; } | observed scopes: (no matching token)` | syntaxes/*.json (TextMate grammar) |
 
 ## Color
 

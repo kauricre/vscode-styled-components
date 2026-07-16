@@ -8,56 +8,16 @@
   "summary": {
     "validation": 0,
     "autocomplete": 0,
-    "highlighting": 6,
+    "highlighting": 1,
     "color": 5
   },
   "findings": [
     {
-      "feature": "container",
-      "layer": "highlighting",
-      "probe": "editor",
-      "symptom": "token '@container' not found in CSS scope",
-      "evidence": ".wrap { container-type: inline-size; } @container (min-width: 400px) { .x { color: red; } }",
-      "fixLocation": "syntaxes/*.json (TextMate grammar)"
-    },
-    {
-      "feature": "layer",
-      "layer": "highlighting",
-      "probe": "editor",
-      "symptom": "token '@layer' not found in CSS scope",
-      "evidence": "@layer base { .x { color: red; } }",
-      "fixLocation": "syntaxes/*.json (TextMate grammar)"
-    },
-    {
-      "feature": "scope",
-      "layer": "highlighting",
-      "probe": "editor",
-      "symptom": "token '@scope' not found in CSS scope",
-      "evidence": "@scope (.x) to (.y) { .z { color: red; } }",
-      "fixLocation": "syntaxes/*.json (TextMate grammar)"
-    },
-    {
-      "feature": "starting-style",
-      "layer": "highlighting",
-      "probe": "editor",
-      "symptom": "token '@starting-style' not found in CSS scope",
-      "evidence": "@starting-style { .x { opacity: 0; } }",
-      "fixLocation": "syntaxes/*.json (TextMate grammar)"
-    },
-    {
-      "feature": "has",
-      "layer": "highlighting",
-      "probe": "editor",
-      "symptom": "token ':has' not found in CSS scope",
-      "evidence": ".x:has(> .y) { color: red; }",
-      "fixLocation": "syntaxes/*.json (TextMate grammar)"
-    },
-    {
       "feature": "popover-open",
       "layer": "highlighting",
       "probe": "editor",
-      "symptom": "token ':popover-open' not found in CSS scope",
-      "evidence": ".x:popover-open { color: red; }",
+      "symptom": "'popover-open' not found as a token",
+      "evidence": ".x:popover-open { color: red; } | observed scopes: (no matching token)",
       "fixLocation": "syntaxes/*.json (TextMate grammar)"
     },
     {
