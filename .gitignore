@@ -1,3 +1,5 @@
 node_modules
 dist
 .vscode-test
+audit/editor/fixture.tsx
+audit/editor/fixture.map.json

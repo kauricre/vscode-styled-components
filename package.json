@@ -25,7 +25,13 @@
     "test": "node ./src/tests/runTests.js",
     "watch": "node ./build.mjs --watch",
     "vscode:prepublish": "node ./build.mjs --production",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "audit:recon": "node audit/recon.js",
+    "audit:data": "node audit/probe-data.js",
+    "audit:corpus": "node audit/probe-corpus.js",
+    "audit:test": "node --test audit/corpus.test.js audit/probe-data.test.js audit/probe-corpus.test.js audit/report.test.js",
+    "audit:editor": "npm run compile && node audit/editor/run.js",
+    "audit": "node audit/run.js && npm run audit:editor && node audit/report.js"
   },
   "activationEvents": [
     "onLanguage:typescriptreact",
@@ -86,8 +92,8 @@
     ]
   },
   "dependencies": {
-    "d3-color": "^3.1.0",
     "@styled/typescript-styled-plugin": "^1.0.0",
+    "d3-color": "^3.1.0",
     "vscode-css-languageservice": "^6.2.1"
   },
   "devDependencies": {
@@ -97,6 +103,7 @@
     "@types/node": "^18.11.9",
     "@types/vscode": "^1.73.1",
     "@vscode/test-electron": "^2.2.0",
+    "css-latest": "npm:vscode-css-languageservice@^6.3.10",
     "esbuild": "^0.19.9",
     "glob": "7.1.6",
     "husky": "^7.0.4",
