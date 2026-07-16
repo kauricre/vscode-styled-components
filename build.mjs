@@ -35,6 +35,6 @@ const context = await esbuild
 if (watch) {
   await context.watch();
 } else {
-  context.rebuild();
-  context.dispose();
+  await context.rebuild();
+  await context.dispose();
 }
