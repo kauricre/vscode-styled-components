@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const { runDataProbe } = require("./probe-data");
 const { runCorpusProbe } = require("./probe-corpus");
+const { runColorProbe } = require("./probe-color");
 
 const outDir = path.resolve(__dirname, "../docs/superpowers/audit");
 fs.mkdirSync(outDir, { recursive: true });
@@ -23,3 +24,10 @@ console.log(
   `Probe A: ${data.missing.properties.length} missing properties, ${data.missing.atDirectives.length} missing at-directives (bundled ${data.bundledVersion} vs latest ${data.latestVersion})`
 );
 console.log(`Probe B: ${corpus.length} corpus diagnostics`);
+
+const colorFindings = runColorProbe();
+fs.writeFileSync(
+  path.join(outDir, "probe-color.json"),
+  JSON.stringify(colorFindings, null, 2)
+);
+console.log(`Probe color: ${colorFindings.length} color findings`);

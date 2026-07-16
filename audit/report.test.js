@@ -33,12 +33,17 @@ const fixture = {
       fixLocation: "dependency",
     },
   ],
-  editorFindings: {
-    color: [
-      { feature: "oklch", symptom: "no color swatch", evidence: "oklch(...)" },
-    ],
-    highlighting: [],
-  },
+  editorFindings: { highlighting: [] },
+  colorFindings: [
+    {
+      feature: "oklch",
+      layer: "color",
+      probe: "color",
+      symptom: "no inline color swatch produced",
+      evidence: ".x { color: oklch(0.7 0.15 200); }",
+      fixLocation: "src/colorMatch.js / src/colorProvider.ts",
+    },
+  ],
 };
 
 test("report json summarises counts per layer and echoes version delta", () => {

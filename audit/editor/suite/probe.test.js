@@ -4,7 +4,6 @@ const fs = require("fs");
 const path = require("path");
 const { commands, Uri, window, workspace } = require("vscode");
 
-const fixturePath = path.resolve(__dirname, "../fixture.tsx");
 const map = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, "../fixture.map.json"), "utf8")
 );
@@ -13,11 +12,8 @@ const outPath = path.resolve(
   "../../../docs/superpowers/audit/editor-findings.json"
 );
 
-const inRange = (line, entry) =>
-  line >= entry.startLine && line <= entry.endLine;
-
 suite("editor audit probe", () => {
-  test("capture tokens + colors, write findings", async function () {
+  test("capture tokens, write findings", async function () {
     this.timeout(60000);
 
     // --- Highlighting: one construct per file (captureSyntaxTokens has no
@@ -55,30 +51,8 @@ suite("editor audit probe", () => {
       }
     }
 
-    // --- Color: color-layer features must yield a swatch within their line span
-    // in the combined fixture. ---
-    const colorDoc = await workspace.openTextDocument(Uri.file(fixturePath));
-    await window.showTextDocument(colorDoc);
-    const colors = await commands.executeCommand(
-      "vscode.executeDocumentColorProvider",
-      Uri.file(fixturePath)
-    );
-    const color = [];
-    for (const entry of map.filter((e) => e.expectedLayer === "color")) {
-      const swatch = (colors || []).find((c) =>
-        inRange(c.range.start.line, entry)
-      );
-      if (!swatch) {
-        color.push({
-          feature: entry.feature,
-          symptom: "no inline color swatch produced",
-          evidence: entry.css,
-        });
-      }
-    }
-
     fs.mkdirSync(path.dirname(outPath), { recursive: true });
-    fs.writeFileSync(outPath, JSON.stringify({ highlighting, color }, null, 2));
+    fs.writeFileSync(outPath, JSON.stringify({ highlighting }, null, 2));
 
     // The probe's job is to RECORD findings, not to fail the run. Assert only that it produced output.
     assert.ok(fs.existsSync(outPath));

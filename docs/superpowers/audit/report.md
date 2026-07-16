@@ -12,7 +12,7 @@
 | Validation | 0 |
 | Autocomplete | 0 |
 | Highlighting | 1 |
-| Color | 5 |
+| Color | 0 |
 
 > Note: Highlighting findings are heuristic (token-scope detection) and warrant human confirmation. The corpus is a curated sample for the highlighting/color layers; Probe A's data-diff is the exhaustive backstop for validation/autocomplete.
 
@@ -32,10 +32,4 @@ _No findings._
 
 ## Color
 
-| Feature | Symptom | Evidence | Fix location |
-|---|---|---|---|
-| `oklch` | no inline color swatch produced | `.x { color: oklch(0.7 0.15 200); }` | src/colorProvider.ts (regex + d3-color do not handle this color syntax) |
-| `oklab` | no inline color swatch produced | `.x { color: oklab(0.7 0.1 0.1); }` | src/colorProvider.ts (regex + d3-color do not handle this color syntax) |
-| `color-mix` | no inline color swatch produced | `.x { color: color-mix(in oklch, red, blue); }` | src/colorProvider.ts (regex + d3-color do not handle this color syntax) |
-| `relative-color` | no inline color swatch produced | `.x { color: rgb(from red r g b); }` | src/colorProvider.ts (regex + d3-color do not handle this color syntax) |
-| `light-dark` | no inline color swatch produced | `.x { color: light-dark(red, blue); }` | src/colorProvider.ts (regex + d3-color do not handle this color syntax) |
+_No findings._
