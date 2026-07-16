@@ -3,7 +3,7 @@
 **Generated:** 2026-07-16
 **Plugin css-languageservice:** 6.2.4 (`node_modules/vscode-css-languageservice`)
 **Latest css-languageservice:** 6.3.10
-**Editor probe ran:** no (highlighting/color layers not measured this run)
+**Editor probe ran:** yes
 
 ## Summary
 
@@ -11,8 +11,8 @@
 |---|---|
 | Validation | 10 |
 | Autocomplete | 151 |
-| Highlighting | 0 |
-| Color | 0 |
+| Highlighting | 6 |
+| Color | 4 |
 
 ## Validation
 
@@ -187,8 +187,20 @@
 
 ## Highlighting
 
-_No findings._
+| Feature | Symptom | Evidence | Fix location |
+|---|---|---|---|
+| `container` | token '@container' not found in CSS scope | `.wrap { container-type: inline-size; } @container (min-width: 400px) { .x { color: red; } }` | syntaxes/*.json (TextMate grammar) |
+| `layer` | token '@layer' not found in CSS scope | `@layer base { .x { color: red; } }` | syntaxes/*.json (TextMate grammar) |
+| `scope` | token '@scope' not found in CSS scope | `@scope (.x) to (.y) { .z { color: red; } }` | syntaxes/*.json (TextMate grammar) |
+| `starting-style` | token '@starting-style' not found in CSS scope | `@starting-style { .x { opacity: 0; } }` | syntaxes/*.json (TextMate grammar) |
+| `has` | token ':has' not found in CSS scope | `.x:has(> .y) { color: red; }` | syntaxes/*.json (TextMate grammar) |
+| `popover-open` | token ':popover-open' not found in CSS scope | `.x:popover-open { color: red; }` | syntaxes/*.json (TextMate grammar) |
 
 ## Color
 
-_No findings._
+| Feature | Symptom | Evidence | Fix location |
+|---|---|---|---|
+| `oklch` | no inline color swatch produced | `.x { color: oklch(0.7 0.15 200); }` | src/colorProvider.ts (regex + d3-color do not handle this color syntax) |
+| `oklab` | no inline color swatch produced | `.x { color: oklab(0.7 0.1 0.1); }` | src/colorProvider.ts (regex + d3-color do not handle this color syntax) |
+| `color-mix` | no inline color swatch produced | `.x { color: color-mix(in oklch, red, blue); }` | src/colorProvider.ts (regex + d3-color do not handle this color syntax) |
+| `relative-color` | no inline color swatch produced | `.x { color: rgb(from red r g b); }` | src/colorProvider.ts (regex + d3-color do not handle this color syntax) |

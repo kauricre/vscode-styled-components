@@ -30,7 +30,8 @@
     "audit:data": "node audit/probe-data.js",
     "audit:corpus": "node audit/probe-corpus.js",
     "audit:test": "node --test audit/corpus.test.js audit/probe-data.test.js audit/probe-corpus.test.js audit/report.test.js",
-    "audit": "node audit/run.js && node audit/report.js"
+    "audit:editor": "npm run compile && node audit/editor/run.js",
+    "audit": "node audit/run.js && npm run audit:editor && node audit/report.js"
   },
   "activationEvents": [
     "onLanguage:typescriptreact",
