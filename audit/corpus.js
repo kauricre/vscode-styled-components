@@ -85,7 +85,7 @@ const CORPUS = [
   {
     feature: "light-dark",
     expectedLayer: "color",
-    css: ".x { color: light-dark(#ffffff, #000000); }",
+    css: ".x { color: light-dark(red, blue); }",
   },
 
   // --- highlighting (at-rules / modern selectors) ---

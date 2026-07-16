@@ -104,6 +104,8 @@ function buildReport({
     `| Highlighting | ${summary.highlighting} |`,
     `| Color | ${summary.color} |`,
     ``,
+    `> Note: Highlighting findings are heuristic (token-scope detection) and warrant human confirmation. The corpus is a curated sample for the highlighting/color layers; Probe A's data-diff is the exhaustive backstop for validation/autocomplete.`,
+    ``,
     layerSection("Validation", "validation"),
     layerSection("Autocomplete", "autocomplete"),
     layerSection("Highlighting", "highlighting"),

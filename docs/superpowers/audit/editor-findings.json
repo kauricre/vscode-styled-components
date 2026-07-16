@@ -51,6 +51,11 @@
       "feature": "relative-color",
       "symptom": "no inline color swatch produced",
       "evidence": ".x { color: rgb(from red r g b); }"
+    },
+    {
+      "feature": "light-dark",
+      "symptom": "no inline color swatch produced",
+      "evidence": ".x { color: light-dark(red, blue); }"
     }
   ]
 }

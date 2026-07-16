@@ -9,7 +9,7 @@
     "validation": 10,
     "autocomplete": 151,
     "highlighting": 6,
-    "color": 4
+    "color": 5
   },
   "findings": [
     {
@@ -1378,6 +1378,14 @@
       "probe": "editor",
       "symptom": "no inline color swatch produced",
       "evidence": ".x { color: rgb(from red r g b); }",
+      "fixLocation": "src/colorProvider.ts (regex + d3-color do not handle this color syntax)"
+    },
+    {
+      "feature": "light-dark",
+      "layer": "color",
+      "probe": "editor",
+      "symptom": "no inline color swatch produced",
+      "evidence": ".x { color: light-dark(red, blue); }",
       "fixLocation": "src/colorProvider.ts (regex + d3-color do not handle this color syntax)"
     }
   ]

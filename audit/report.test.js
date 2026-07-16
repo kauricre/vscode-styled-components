@@ -59,3 +59,10 @@ test("markdown reproduces the overlay finding and names the fix location", () =>
   assert.match(md, /## Autocomplete/);
   assert.match(md, /## Color/);
 });
+
+test("markdown states the heuristic/curated-sample caveat", () => {
+  const { md } = buildReport(fixture);
+  assert.match(md, /heuristic/i);
+  assert.match(md, /curated sample/i);
+  assert.match(md, /Probe A/);
+});
