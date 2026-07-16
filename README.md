@@ -1,6 +1,13 @@
-# vscode-styled-components
+# vscode-styled-components-modern
 
-> **Maintained fork.** This is an actively-maintained fork of the (archived) upstream [styled-components/vscode-styled-components](https://github.com/styled-components/vscode-styled-components), refreshed for 2026 CSS standards: modern properties, at-rules (`@container`, `@scope`, `@starting-style`, …), color functions (`oklch()`, `oklab()`, `color-mix()`, relative color), and newer pseudo-classes (`:popover-open`) are recognised, highlighted, and (where applicable) colour-swatched. See the [CHANGELOG](./CHANGELOG.md).
+> **Actively-maintained fork** of the archived
+> [styled-components/vscode-styled-components](https://github.com/styled-components/vscode-styled-components),
+> refreshed for 2026 CSS standards: modern properties, at-rules (`@container`,
+> `@scope`, `@starting-style`, …), color functions (`oklch()`, `oklab()`,
+> `color-mix()`, relative color), and newer pseudo-classes (`:popover-open`)
+> are recognised, highlighted, and (where applicable) colour-swatched.
+> See the [CHANGELOG](./CHANGELOG.md) and
+> [why this fork](#why-this-fork) below.
 >
 > Source: https://github.com/kauricre/vscode-styled-components
 
@@ -12,13 +19,17 @@ Uses a CSS grammar built on top of [language-sass](https://github.com/atom/langu
 
 ## Install
 
-Inside VSCode, press `Ctrl+P`, and enter:
+**VS Code** — press `Ctrl+P` / `Cmd+P` and enter:
 
 ```
 ext install kauricre.vscode-styled-components-modern
 ```
 
-Or build and install locally from source:
+**Cursor / VSCodium / Windsurf** — the extension is published to
+[Open VSX](https://open-vsx.org/extension/kauricre/vscode-styled-components-modern)
+under the same id; install it from your editor's extension view.
+
+**From source:**
 
 ```
 npm install && npx vsce package
@@ -26,7 +37,46 @@ npm install && npx vsce package
 
 then run **Extensions: Install from VSIX…** on the generated `.vsix`.
 
-[[Source](https://github.com/kauricre/vscode-styled-components)]
+## Why this fork
+
+The upstream extension was archived; its last release (1.7.8, 2023) predates
+modern CSS. This fork:
+
+- **Knows 2026 CSS.** Bundled CSS language service updated (6.2.4 → 6.3.10);
+  a [reproducible audit](./docs/superpowers/audit/report.md) shows 0
+  validation / autocomplete / highlighting / color findings against a
+  modern-CSS corpus.
+- **Verified against upstream's loudest bug reports.** We generated fixtures
+  from the exact repro code of the top-voted upstream highlighting issues and
+  token-probed this fork (VS Code 1.129.0, 2026-07-16 —
+  [raw results](./docs/superpowers/audit/upstream-issues-probe.json)).
+  Verified working in this fork: TypeScript generics on `styled.div<{…}>`
+  (upstream #159, #436, #442), multiline prop types (#358), `.attrs()` with
+  props callbacks (#292), nested `` css`…` `` helpers (#425), wrapped calls
+  like `styled(hof("div"))` (#127, #196), and multiline
+  `styled(\n Component \n)` calls (#328 — fixed in 1.9.0).
+- **Covers more file types.** Color swatches and the template snippet work in
+  plain `.ts` / `.js` files (the `styles.ts` pattern), `.vue`, `.svelte`, and
+  untitled buffers — not just `.tsx`/`.jsx` on disk.
+
+## Known limitations
+
+- **Custom tagged-template names** (e.g. `import myStyled from
+"styled-components"`) don't highlight — planned, tracked as backlog item 7
+  in [the improvement backlog](./docs/superpowers/specs/2026-07-16-improvement-backlog.md).
+- **Syntax colouring after multiline component definitions:** when a
+  multiline `styled(…)` call, multiline `.attrs(…)`, or multiline generic
+  type argument is highlighted, the TypeScript syntax colouring of code
+  after that component can be slightly degraded — a TextMate grammar
+  architecture limit inherited from upstream's continuation patterns.
+- Some IntelliSense quirks live in the bundled
+  [`@styled/typescript-styled-plugin`](https://github.com/styled-components/typescript-styled-plugin),
+  not this extension, and are not fixable here: `var(` completing as
+  `var()()` (upstream #379), `%` appended to decimal completions (#444),
+  'identifier expected' after a template followed by a pseudo-element (#440),
+  Yarn SDK setups (#426).
+- **Emmet expanding HTML in CSS-in-JS** is a VS Code core issue
+  ([microsoft/vscode#119736](https://github.com/microsoft/vscode/issues/119736)).
 
 ## Features
 
@@ -40,8 +90,9 @@ The styled-components extension adds highlighting and IntelliSense for styled-co
 
 ## Raising an issue
 
-Please check the issues list to see if it has already been raised. If it has you can vote on it with a thumbsUp emoji.
-Issues with the most votes tend to be prioritised.
+Please raise issues at
+https://github.com/kauricre/vscode-styled-components/issues. Check the list
+first; vote with a 👍 — most-voted issues get prioritised.
 
 ## Contributing
 
@@ -51,11 +102,9 @@ see [Contributing](./CONTRIBUTING.md)
 
 ### There's no syntax highlighting?
 
-Syntax Highlighting is specifically made to work with `styled` so make sure your default import is `styled` and nothing else.
-
-See: https://github.com/styled-components/vscode-styled-components/issues/118#issuecomment-833007295
-
-Secondly make sure your file is set to the right language. It should be `typescriptreact` or `javascriptreact`. Using the correct extensions (jsx, tsx) should help with this.
+Highlighting requires the default import to be named `styled` (custom names
+are a planned feature — see Known limitations). Also make sure the file's
+language is `typescript(react)` / `javascript(react)`.
 
 ### Emmet tab completion isn't working
 
