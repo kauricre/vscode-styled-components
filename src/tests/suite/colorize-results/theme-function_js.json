@@ -97,7 +97,7 @@
 	},
 	{
 		"c": "styled",
-		"t": "source.js meta.var.expr.js meta.function-call.ts variable.other.object.ts",
+		"t": "source.js meta.var.expr.js meta.function-call.js variable.other.object.js",
 		"r": {
 			"dark_plus": "variable: #9CDCFE",
 			"light_plus": "variable: #001080",
@@ -113,7 +113,7 @@
 	},
 	{
 		"c": ".",
-		"t": "source.js meta.var.expr.js meta.function-call.ts punctuation.accessor.ts",
+		"t": "source.js meta.var.expr.js meta.function-call.js punctuation.accessor.js",
 		"r": {
 			"dark_plus": "default: #D4D4D4",
 			"light_plus": "default: #000000",
@@ -129,7 +129,7 @@
 	},
 	{
 		"c": "div",
-		"t": "source.js meta.var.expr.js meta.function-call.ts entity.name.function.ts",
+		"t": "source.js meta.var.expr.js meta.function-call.js entity.name.function.js",
 		"r": {
 			"dark_plus": "entity.name.function: #DCDCAA",
 			"light_plus": "entity.name.function: #795E26",
@@ -145,7 +145,7 @@
 	},
 	{
 		"c": "(",
-		"t": "source.js meta.var.expr.js meta.brace.round.ts",
+		"t": "source.js meta.var.expr.js meta.brace.round.js",
 		"r": {
 			"dark_plus": "default: #D4D4D4",
 			"light_plus": "default: #000000",
@@ -161,7 +161,7 @@
 	},
 	{
 		"c": "(",
-		"t": "source.js meta.var.expr.js meta.arrow.ts meta.parameters.ts punctuation.definition.parameters.begin.ts",
+		"t": "source.js meta.var.expr.js meta.arrow.js meta.parameters.js punctuation.definition.parameters.begin.js",
 		"r": {
 			"dark_plus": "default: #D4D4D4",
 			"light_plus": "default: #000000",
@@ -177,7 +177,7 @@
 	},
 	{
 		"c": "{",
-		"t": "source.js meta.var.expr.js meta.arrow.ts meta.parameters.ts meta.parameter.object-binding-pattern.ts punctuation.definition.binding-pattern.object.ts",
+		"t": "source.js meta.var.expr.js meta.arrow.js meta.parameters.js meta.parameter.object-binding-pattern.js punctuation.definition.binding-pattern.object.js",
 		"r": {
 			"dark_plus": "default: #D4D4D4",
 			"light_plus": "default: #000000",
@@ -193,7 +193,7 @@
 	},
 	{
 		"c": "theme",
-		"t": "source.js meta.var.expr.js meta.arrow.ts meta.parameters.ts meta.parameter.object-binding-pattern.ts variable.parameter.ts",
+		"t": "source.js meta.var.expr.js meta.arrow.js meta.parameters.js meta.parameter.object-binding-pattern.js variable.parameter.js",
 		"r": {
 			"dark_plus": "variable: #9CDCFE",
 			"light_plus": "variable: #001080",
@@ -209,7 +209,7 @@
 	},
 	{
 		"c": "}",
-		"t": "source.js meta.var.expr.js meta.arrow.ts meta.parameters.ts meta.parameter.object-binding-pattern.ts punctuation.definition.binding-pattern.object.ts",
+		"t": "source.js meta.var.expr.js meta.arrow.js meta.parameters.js meta.parameter.object-binding-pattern.js punctuation.definition.binding-pattern.object.js",
 		"r": {
 			"dark_plus": "default: #D4D4D4",
 			"light_plus": "default: #000000",
@@ -225,7 +225,7 @@
 	},
 	{
 		"c": ")",
-		"t": "source.js meta.var.expr.js meta.arrow.ts meta.parameters.ts punctuation.definition.parameters.end.ts",
+		"t": "source.js meta.var.expr.js meta.arrow.js meta.parameters.js punctuation.definition.parameters.end.js",
 		"r": {
 			"dark_plus": "default: #D4D4D4",
 			"light_plus": "default: #000000",
@@ -241,7 +241,7 @@
 	},
 	{
 		"c": " ",
-		"t": "source.js meta.var.expr.js meta.arrow.ts",
+		"t": "source.js meta.var.expr.js meta.arrow.js",
 		"r": {
 			"dark_plus": "default: #D4D4D4",
 			"light_plus": "default: #000000",
@@ -257,7 +257,7 @@
 	},
 	{
 		"c": "=>",
-		"t": "source.js meta.var.expr.js meta.arrow.ts storage.type.function.arrow.ts",
+		"t": "source.js meta.var.expr.js meta.arrow.js storage.type.function.arrow.js",
 		"r": {
 			"dark_plus": "storage.type: #569CD6",
 			"light_plus": "storage.type: #0000FF",
@@ -273,7 +273,7 @@
 	},
 	{
 		"c": " ",
-		"t": "source.js meta.var.expr.js meta.arrow.ts",
+		"t": "source.js meta.var.expr.js meta.arrow.js",
 		"r": {
 			"dark_plus": "default: #D4D4D4",
 			"light_plus": "default: #000000",
@@ -289,7 +289,7 @@
 	},
 	{
 		"c": "`",
-		"t": "source.js meta.var.expr.js punctuation.definition.string.template.begin.js string.template.js",
+		"t": "source.js meta.var.expr.js string.template.js punctuation.definition.string.template.begin.js",
 		"r": {
 			"dark_plus": "string: #CE9178",
 			"light_plus": "string: #A31515",
@@ -304,72 +304,24 @@
 		}
 	},
 	{
-		"c": "    ",
-		"t": "source.js meta.var.expr.js source.css.scss",
+		"c": "    color: ",
+		"t": "source.js meta.var.expr.js string.template.js",
 		"r": {
-			"dark_plus": "default: #D4D4D4",
-			"light_plus": "default: #000000",
-			"dark_vs": "default: #D4D4D4",
-			"light_vs": "default: #000000",
-			"hc_black": "default: #FFFFFF",
-			"2026-dark": "default: #BBBEBF",
-			"dark_modern": "default: #CCCCCC",
-			"2026-light": "default: #202020",
-			"hc_light": "default: #292929",
-			"light_modern": "default: #3B3B3B"
-		}
-	},
-	{
-		"c": "color",
-		"t": "source.js meta.var.expr.js source.css.scss meta.property-name.scss support.type.property-name.css",
-		"r": {
-			"dark_plus": "support.type.property-name: #9CDCFE",
-			"light_plus": "support.type.property-name: #E50000",
-			"dark_vs": "support.type.property-name: #9CDCFE",
-			"light_vs": "support.type.property-name: #E50000",
-			"hc_black": "support.type.property-name: #D4D4D4",
-			"2026-dark": "support.type.property-name: #9CDCFE",
-			"dark_modern": "support.type.property-name: #9CDCFE",
-			"2026-light": "support.type.property-name: #E50000",
-			"hc_light": "support.type.property-name: #264F78",
-			"light_modern": "support.type.property-name: #E50000"
-		}
-	},
-	{
-		"c": ":",
-		"t": "source.js meta.var.expr.js source.css.scss punctuation.separator.key-value.scss",
-		"r": {
-			"dark_plus": "default: #D4D4D4",
-			"light_plus": "default: #000000",
-			"dark_vs": "default: #D4D4D4",
-			"light_vs": "default: #000000",
-			"hc_black": "default: #FFFFFF",
-			"2026-dark": "default: #BBBEBF",
-			"dark_modern": "default: #CCCCCC",
-			"2026-light": "default: #202020",
-			"hc_light": "default: #292929",
-			"light_modern": "default: #3B3B3B"
-		}
-	},
-	{
-		"c": " ",
-		"t": "source.js meta.var.expr.js source.css.scss",
-		"r": {
-			"dark_plus": "default: #D4D4D4",
-			"light_plus": "default: #000000",
-			"dark_vs": "default: #D4D4D4",
-			"light_vs": "default: #000000",
-			"hc_black": "default: #FFFFFF",
-			"2026-dark": "default: #BBBEBF",
-			"dark_modern": "default: #CCCCCC",
-			"2026-light": "default: #202020",
-			"hc_light": "default: #292929",
-			"light_modern": "default: #3B3B3B"
+			"dark_plus": "string: #CE9178",
+			"light_plus": "string: #A31515",
+			"dark_vs": "string: #CE9178",
+			"light_vs": "string: #A31515",
+			"hc_black": "string: #CE9178",
+			"2026-dark": "string: #A5D6FF",
+			"dark_modern": "string: #CE9178",
+			"2026-light": "string: #0A3069",
+			"hc_light": "string: #0F4A85",
+			"light_modern": "string: #A31515"
 		}
 	},
 	{
 		"c": "${",
-		"t": "source.js meta.var.expr.js source.css.scss meta.property-value.scss variable.interpolation.scss punctuation.definition.interpolation.begin.bracket.curly.scss punctuation.definition.template-expression.begin.js",
+		"t": "source.js meta.var.expr.js string.template.js meta.template.expression.js punctuation.definition.template-expression.begin.js",
 		"r": {
 			"dark_plus": "punctuation.definition.template-expression.begin: #569CD6",
 			"light_plus": "punctuation.definition.template-expression.begin: #0000FF",
@@ -385,23 +337,23 @@
 	},
 	{
 		"c": "theme",
-		"t": "source.js meta.var.expr.js source.css.scss meta.property-value.scss variable.interpolation.scss meta.embedded.line.ts variable.other.object.ts",
+		"t": "source.js meta.var.expr.js string.template.js meta.template.expression.js meta.embedded.line.js variable.other.object.js",
 		"r": {
-			"dark_plus": "source.css variable: #9CDCFE",
-			"light_plus": "source.css variable: #E50000",
-			"dark_vs": "source.css variable: #9CDCFE",
-			"light_vs": "source.css variable: #E50000",
-			"hc_black": "source.css variable: #D4D4D4",
+			"dark_plus": "variable: #9CDCFE",
+			"light_plus": "variable: #001080",
+			"dark_vs": "meta.embedded: #D4D4D4",
+			"light_vs": "meta.embedded: #000000",
+			"hc_black": "variable: #9CDCFE",
 			"2026-dark": "variable.other: #C9D1D9",
-			"dark_modern": "source.css variable: #9CDCFE",
+			"dark_modern": "variable: #9CDCFE",
 			"2026-light": "variable.other: #1F2328",
-			"hc_light": "source.css variable: #264F78",
-			"light_modern": "source.css variable: #E50000"
+			"hc_light": "variable: #001080",
+			"light_modern": "variable: #001080"
 		}
 	},
 	{
 		"c": ".",
-		"t": "source.js meta.var.expr.js source.css.scss meta.property-value.scss variable.interpolation.scss meta.embedded.line.ts punctuation.accessor.ts",
+		"t": "source.js meta.var.expr.js string.template.js meta.template.expression.js meta.embedded.line.js punctuation.accessor.js",
 		"r": {
 			"dark_plus": "meta.embedded: #D4D4D4",
 			"light_plus": "meta.embedded: #000000",
@@ -417,23 +369,23 @@
 	},
 	{
 		"c": "primary",
-		"t": "source.js meta.var.expr.js source.css.scss meta.property-value.scss variable.interpolation.scss meta.embedded.line.ts variable.other.object.property.ts",
+		"t": "source.js meta.var.expr.js string.template.js meta.template.expression.js meta.embedded.line.js variable.other.object.property.js",
 		"r": {
-			"dark_plus": "source.css variable: #9CDCFE",
-			"light_plus": "source.css variable: #E50000",
-			"dark_vs": "source.css variable: #9CDCFE",
-			"light_vs": "source.css variable: #E50000",
-			"hc_black": "source.css variable: #D4D4D4",
+			"dark_plus": "variable: #9CDCFE",
+			"light_plus": "variable: #001080",
+			"dark_vs": "meta.embedded: #D4D4D4",
+			"light_vs": "meta.embedded: #000000",
+			"hc_black": "variable: #9CDCFE",
 			"2026-dark": "variable.other: #C9D1D9",
-			"dark_modern": "source.css variable: #9CDCFE",
+			"dark_modern": "variable: #9CDCFE",
 			"2026-light": "variable.other: #1F2328",
-			"hc_light": "source.css variable: #264F78",
-			"light_modern": "source.css variable: #E50000"
+			"hc_light": "variable: #001080",
+			"light_modern": "variable: #001080"
 		}
 	},
 	{
 		"c": ".",
-		"t": "source.js meta.var.expr.js source.css.scss meta.property-value.scss variable.interpolation.scss meta.embedded.line.ts punctuation.accessor.ts",
+		"t": "source.js meta.var.expr.js string.template.js meta.template.expression.js meta.embedded.line.js punctuation.accessor.js",
 		"r": {
 			"dark_plus": "meta.embedded: #D4D4D4",
 			"light_plus": "meta.embedded: #000000",
@@ -449,23 +401,23 @@
 	},
 	{
 		"c": "main",
-		"t": "source.js meta.var.expr.js source.css.scss meta.property-value.scss variable.interpolation.scss meta.embedded.line.ts variable.other.property.ts",
+		"t": "source.js meta.var.expr.js string.template.js meta.template.expression.js meta.embedded.line.js variable.other.property.js",
 		"r": {
-			"dark_plus": "source.css variable: #9CDCFE",
-			"light_plus": "source.css variable: #E50000",
-			"dark_vs": "source.css variable: #9CDCFE",
-			"light_vs": "source.css variable: #E50000",
-			"hc_black": "source.css variable: #D4D4D4",
+			"dark_plus": "variable: #9CDCFE",
+			"light_plus": "variable: #001080",
+			"dark_vs": "meta.embedded: #D4D4D4",
+			"light_vs": "meta.embedded: #000000",
+			"hc_black": "variable: #9CDCFE",
 			"2026-dark": "variable.other: #C9D1D9",
-			"dark_modern": "source.css variable: #9CDCFE",
+			"dark_modern": "variable: #9CDCFE",
 			"2026-light": "variable.other: #1F2328",
-			"hc_light": "source.css variable: #264F78",
-			"light_modern": "source.css variable: #E50000"
+			"hc_light": "variable: #001080",
+			"light_modern": "variable: #001080"
 		}
 	},
 	{
 		"c": "}",
-		"t": "source.js meta.var.expr.js source.css.scss meta.property-value.scss variable.interpolation.scss punctuation.definition.interpolation.end.bracket.curly.scss punctuation.definition.template-expression.end.js",
+		"t": "source.js meta.var.expr.js string.template.js meta.template.expression.js punctuation.definition.template-expression.end.js",
 		"r": {
 			"dark_plus": "punctuation.definition.template-expression.end: #569CD6",
 			"light_plus": "punctuation.definition.template-expression.end: #0000FF",
@@ -481,135 +433,39 @@
 	},
 	{
 		"c": ";",
-		"t": "source.js meta.var.expr.js source.css.scss punctuation.terminator.rule.scss",
+		"t": "source.js meta.var.expr.js string.template.js",
 		"r": {
-			"dark_plus": "default: #D4D4D4",
-			"light_plus": "default: #000000",
-			"dark_vs": "default: #D4D4D4",
-			"light_vs": "default: #000000",
-			"hc_black": "default: #FFFFFF",
-			"2026-dark": "default: #BBBEBF",
-			"dark_modern": "default: #CCCCCC",
-			"2026-light": "default: #202020",
-			"hc_light": "default: #292929",
-			"light_modern": "default: #3B3B3B"
+			"dark_plus": "string: #CE9178",
+			"light_plus": "string: #A31515",
+			"dark_vs": "string: #CE9178",
+			"light_vs": "string: #A31515",
+			"hc_black": "string: #CE9178",
+			"2026-dark": "string: #A5D6FF",
+			"dark_modern": "string: #CE9178",
+			"2026-light": "string: #0A3069",
+			"hc_light": "string: #0F4A85",
+			"light_modern": "string: #A31515"
 		}
 	},
 	{
-		"c": "    ",
-		"t": "source.js meta.var.expr.js source.css.scss",
+		"c": "    height: 12px;",
+		"t": "source.js meta.var.expr.js string.template.js",
 		"r": {
-			"dark_plus": "default: #D4D4D4",
-			"light_plus": "default: #000000",
-			"dark_vs": "default: #D4D4D4",
-			"light_vs": "default: #000000",
-			"hc_black": "default: #FFFFFF",
-			"2026-dark": "default: #BBBEBF",
-			"dark_modern": "default: #CCCCCC",
-			"2026-light": "default: #202020",
-			"hc_light": "default: #292929",
-			"light_modern": "default: #3B3B3B"
-		}
-	},
-	{
-		"c": "height",
-		"t": "source.js meta.var.expr.js source.css.scss meta.property-name.scss support.type.property-name.css",
-		"r": {
-			"dark_plus": "support.type.property-name: #9CDCFE",
-			"light_plus": "support.type.property-name: #E50000",
-			"dark_vs": "support.type.property-name: #9CDCFE",
-			"light_vs": "support.type.property-name: #E50000",
-			"hc_black": "support.type.property-name: #D4D4D4",
-			"2026-dark": "support.type.property-name: #9CDCFE",
-			"dark_modern": "support.type.property-name: #9CDCFE",
-			"2026-light": "support.type.property-name: #E50000",
-			"hc_light": "support.type.property-name: #264F78",
-			"light_modern": "support.type.property-name: #E50000"
-		}
-	},
-	{
-		"c": ":",
-		"t": "source.js meta.var.expr.js source.css.scss punctuation.separator.key-value.scss",
-		"r": {
-			"dark_plus": "default: #D4D4D4",
-			"light_plus": "default: #000000",
-			"dark_vs": "default: #D4D4D4",
-			"light_vs": "default: #000000",
-			"hc_black": "default: #FFFFFF",
-			"2026-dark": "default: #BBBEBF",
-			"dark_modern": "default: #CCCCCC",
-			"2026-light": "default: #202020",
-			"hc_light": "default: #292929",
-			"light_modern": "default: #3B3B3B"
-		}
-	},
-	{
-		"c": " ",
-		"t": "source.js meta.var.expr.js source.css.scss",
-		"r": {
-			"dark_plus": "default: #D4D4D4",
-			"light_plus": "default: #000000",
-			"dark_vs": "default: #D4D4D4",
-			"light_vs": "default: #000000",
-			"hc_black": "default: #FFFFFF",
-			"2026-dark": "default: #BBBEBF",
-			"dark_modern": "default: #CCCCCC",
-			"2026-light": "default: #202020",
-			"hc_light": "default: #292929",
-			"light_modern": "default: #3B3B3B"
-		}
-	},
-	{
-		"c": "12",
-		"t": "source.js meta.var.expr.js source.css.scss meta.property-value.scss constant.numeric.css",
-		"r": {
-			"dark_plus": "constant.numeric: #B5CEA8",
-			"light_plus": "constant.numeric: #098658",
-			"dark_vs": "constant.numeric: #B5CEA8",
-			"light_vs": "constant.numeric: #098658",
-			"hc_black": "constant.numeric: #B5CEA8",
-			"2026-dark": "constant.numeric: #B5CEA8",
-			"dark_modern": "constant.numeric: #B5CEA8",
-			"2026-light": "constant.numeric: #098658",
-			"hc_light": "constant.numeric: #096D48",
-			"light_modern": "constant.numeric: #098658"
-		}
-	},
-	{
-		"c": "px",
-		"t": "source.js meta.var.expr.js source.css.scss meta.property-value.scss constant.numeric.css keyword.other.unit.px.css",
-		"r": {
-			"dark_plus": "keyword.other.unit: #B5CEA8",
-			"light_plus": "keyword.other.unit: #098658",
-			"dark_vs": "keyword.other.unit: #B5CEA8",
-			"light_vs": "keyword.other.unit: #098658",
-			"hc_black": "keyword.other.unit: #B5CEA8",
-			"2026-dark": "keyword.other.unit: #B5CEA8",
-			"dark_modern": "keyword.other.unit: #B5CEA8",
-			"2026-light": "keyword.other.unit: #098658",
-			"hc_light": "keyword.other.unit: #096D48",
-			"light_modern": "keyword.other.unit: #098658"
-		}
-	},
-	{
-		"c": ";",
-		"t": "source.js meta.var.expr.js source.css.scss punctuation.terminator.rule.scss",
-		"r": {
-			"dark_plus": "default: #D4D4D4",
-			"light_plus": "default: #000000",
-			"dark_vs": "default: #D4D4D4",
-			"light_vs": "default: #000000",
-			"hc_black": "default: #FFFFFF",
-			"2026-dark": "default: #BBBEBF",
-			"dark_modern": "default: #CCCCCC",
-			"2026-light": "default: #202020",
-			"hc_light": "default: #292929",
-			"light_modern": "default: #3B3B3B"
+			"dark_plus": "string: #CE9178",
+			"light_plus": "string: #A31515",
+			"dark_vs": "string: #CE9178",
+			"light_vs": "string: #A31515",
+			"hc_black": "string: #CE9178",
+			"2026-dark": "string: #A5D6FF",
+			"dark_modern": "string: #CE9178",
+			"2026-light": "string: #0A3069",
+			"hc_light": "string: #0F4A85",
+			"light_modern": "string: #A31515"
 		}
 	},
 	{
 		"c": "`",
-		"t": "source.js meta.var.expr.js punctuation.definition.string.template.end.js string.template.js",
+		"t": "source.js meta.var.expr.js string.template.js punctuation.definition.string.template.end.js",
 		"r": {
 			"dark_plus": "string: #CE9178",
 			"light_plus": "string: #A31515",
@@ -625,7 +481,7 @@
 	},
 	{
 		"c": ")",
-		"t": "source.js meta.var.expr.js",
+		"t": "source.js meta.var.expr.js meta.brace.round.js",
 		"r": {
 			"dark_plus": "default: #D4D4D4",
 			"light_plus": "default: #000000",
