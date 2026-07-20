@@ -8,6 +8,7 @@ import {
 import { colorProvider } from "./colorProvider";
 import { provideCompletionItems } from "./completionItemProvider";
 import { enterKeyEvent } from "./insertColonCommand";
+import { registerPluginConfig } from "./pluginConfig";
 
 export const documentSelector: DocumentSelector = [
   "typescript",
@@ -19,6 +20,8 @@ export const documentSelector: DocumentSelector = [
 ];
 
 export function activate(context: ExtensionContext) {
+  registerPluginConfig(context);
+
   // Handle Completions in this extension
   context.subscriptions.push(
     languages.registerCompletionItemProvider(
