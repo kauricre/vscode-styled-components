@@ -7,10 +7,19 @@ import {
   CompletionItemKind,
 } from "vscode";
 
+const { shouldOfferExpand } = require("./snippetContext");
+
 export const provideCompletionItems = (
   document: TextDocument,
   position: Position
 ) => {
+  const lineBeforeCursor = document
+    .lineAt(position)
+    .text.slice(0, position.character);
+  if (!shouldOfferExpand(lineBeforeCursor)) {
+    return [];
+  }
+
   // First decide if we're between two `` or next to one
   const nextCharacterPosition = position.with({
     character: position.character + 1,
