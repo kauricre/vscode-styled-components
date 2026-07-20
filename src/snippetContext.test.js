@@ -18,6 +18,8 @@ const OFFER = [
   ")`", // multiline styled(...) continuation line
   "))`", // multiline .attrs(...) continuation line
   "}>`", // multiline generic continuation line
+  "const StyledDiv = styled.div(({theme}) => `", // arrow function, destructured param
+  "const StyledDiv = styled.div((props) => `", // arrow function, bare param
 ];
 
 const SILENT = [
@@ -28,6 +30,7 @@ const SILENT = [
   "const u = styledFoo`", // identifier merely containing 'styled'
   "const v = String.raw`",
   "if (a > b) `", // stray backtick after code
+  "export const CallForm = styled(Base)(`", // upstream #446 call-form false positive
 ];
 
 test("offers the snippet in styled-components tag contexts", () => {

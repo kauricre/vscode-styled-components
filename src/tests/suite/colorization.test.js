@@ -72,19 +72,6 @@ function hasThemeChange(d, p) {
   return false;
 }
 
-// KNOWN QUIRK: theme-function.js's snapshot is sensitive to the total number
-// of files in colorize-fixtures/, unrelated to this extension's own grammar.
-// Its `styled.div(({theme}) => \`...\`)` construct gets tokenized with a
-// different internal JS/TS grammar variant (.ts- vs .js-suffixed nested
-// scopes) depending purely on sibling file count in this directory —
-// confirmed by ruling out grammar changes, fixture content, extension,
-// position, test-profile freshness, semantic highlighting, and warm-up
-// ordering (none of these explain it; only the count does). If this
-// fixture's snapshot drifts when you add or remove ANY fixture, and the
-// diff shows source.css.scss scopes appearing/disappearing on this file
-// specifically, that is this known, external VS Code/TypeScript-language-
-// features behavior — regenerate and commit its snapshot without further
-// investigation.
 suite("colorization", () => {
   let extensionColorizeFixturePath = join(__dirname, "colorize-fixtures");
   if (fs.existsSync(extensionColorizeFixturePath)) {

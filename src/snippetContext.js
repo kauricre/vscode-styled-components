@@ -6,8 +6,11 @@
 const TAG_BEFORE_BACKTICK = new RegExp(
   "(?:" +
     // styled.div / styled(Button) / styled("div") / styled<P>("div") /
-    // chained members like .attrs(...) — with an optional <generic>.
-    "\\bstyled\\s*(?:<[^`]*>\\s*)?(?:\\.\\s*[A-Za-z_$][\\w$]*|\\([^`]*\\))+(?:\\s*<[^`]*>)?" +
+    // chained members like .attrs(...) — with an optional <generic>. The
+    // arrow-function-call alternative (styled.div((props) => `) is tried
+    // before the generic \([^`]*\) catch-all, since the catch-all would
+    // otherwise swallow the arrow function's own parens and strand the "=>".
+    "\\bstyled\\s*(?:<[^`]*>\\s*)?(?:\\.\\s*[A-Za-z_$][\\w$]*|\\(\\([\\{\\}\\w,\\:\\s]+?\\)\\s*=>\\s*|\\([^`]*\\))+(?:\\s*<[^`]*>)?" +
     "|\\b(?:css|keyframes|createGlobalStyle|injectGlobal|extend)" +
     "|^\\s*(?:\\)\\)?|}>)" +
     ")\\s*`$"
