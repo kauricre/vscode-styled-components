@@ -1,5 +1,13 @@
 # Release Notes
 
+## 1.9.0 (16-07-2026)
+
+Adoption release: first fork-only fixes.
+
+- **Highlighting:** multiline `styled(…)` calls — component argument on its own line — now highlight their template (upstream #328); the grammar's continuation pattern accepts a line-leading `)` before the backtick.
+- **Language coverage:** color swatches and the template snippet now work in plain `.ts` / `.js` files, `.vue`, `.svelte`, and untitled buffers — previously `.tsx`/`.jsx` files on disk only.
+- **Docs:** README rewritten for the fork — evidence-linked "why this fork" section, known-limitations list.
+
 ## 1.8.0 (16-07-2026)
 
 Modernises CSS support to 2026 standards (maintained fork).

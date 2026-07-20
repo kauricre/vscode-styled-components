@@ -2,7 +2,7 @@
   "name": "vscode-styled-components-modern",
   "displayName": "Styled Components (Modern CSS)",
   "description": "Syntax highlighting, IntelliSense, and modern-CSS support for styled-components — maintained fork, refreshed for 2026 CSS (oklch, @container, :has, and more).",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "publisher": "kauricre",
   "keywords": [
     "styled-components",
@@ -33,6 +33,7 @@
     "format": "prettier --write .",
     "lint": "prettier --check .",
     "compile": "node ./build.mjs",
+    "pretest": "npm run compile",
     "test": "node ./src/tests/runTests.js",
     "watch": "node ./build.mjs --watch",
     "vscode:prepublish": "node ./build.mjs --production",
@@ -45,8 +46,12 @@
     "audit": "node audit/run.js && npm run audit:editor && node audit/report.js"
   },
   "activationEvents": [
+    "onLanguage:typescript",
+    "onLanguage:javascript",
     "onLanguage:typescriptreact",
-    "onLanguage:javascriptreact"
+    "onLanguage:javascriptreact",
+    "onLanguage:vue",
+    "onLanguage:svelte"
   ],
   "contributes": {
     "languages": [
