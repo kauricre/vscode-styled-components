@@ -1,5 +1,14 @@
 # Release Notes
 
+## 1.10.0 (20-07-2026)
+
+Settings, snippet manners, and one deliberate grammar change.
+
+- **Settings (new):** `styled-components.validate`, `.tags`, `.lint`, `.emmet` — forwarded live to the bundled TS plugin. Disable validation without touching `tsconfig.json`, add custom tagged-template names for IntelliSense, allow-list properties, silence Emmet inside templates.
+- **Changed:** the `styled(Component)(` call form is no longer highlighted as CSS (upstream #446) — a template passed as a call argument is not valid styled-components usage.
+- **Fixed:** the "expand template string" completion no longer appears on every backtick — only in styled-components tag contexts (upstream #386).
+- **Docs:** settings reference + FAQ (nested blocks via the `css` helper, Stylelint handoff, PostCSS conflicts, Yarn SDK setup).
+
 ## 1.9.0 (16-07-2026)
 
 Adoption release: first fork-only fixes.

@@ -2,7 +2,7 @@
   "name": "vscode-styled-components-modern",
   "displayName": "Styled Components (Modern CSS)",
   "description": "Syntax highlighting, IntelliSense, and modern-CSS support for styled-components — maintained fork, refreshed for 2026 CSS (oklch, @container, :has, and more).",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "publisher": "kauricre",
   "keywords": [
     "styled-components",
