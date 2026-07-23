@@ -10,6 +10,7 @@ src/**
 build.mjs
 audit/**
 docs/**
+.claude/**
 .superpowers/**
 .husky/**
 RELEASING.md

@@ -94,6 +94,17 @@ modern CSS. This fork:
 
 The styled-components extension adds highlighting and IntelliSense for styled-component template strings in JavaScript and TypeScript. See [plugin configuration](https://github.com/styled-components/typescript-styled-plugin#configuration) for information on configuring the linter and other language features.
 
+## Settings
+
+| Setting                      | Default                                                         | What it does                                                                                            |
+| ---------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `styled-components.validate` | `true`                                                          | Report CSS errors inside styled templates. Set to `false` if Stylelint (or nothing) should own linting. |
+| `styled-components.tags`     | styled, css, extend, injectGlobal, createGlobalStyle, keyframes | Tagged-template names that get CSS IntelliSense. Highlighting for custom names is planned.              |
+| `styled-components.lint`     | `{}`                                                            | CSS lint options, e.g. `{"validProperties": ["composes"]}` to allow-list properties.                    |
+| `styled-components.emmet`    | `{}`                                                            | Emmet inside templates, e.g. `{"showExpandedAbbreviation": "never"}` to silence it.                     |
+
+Settings apply per user or per workspace — no `tsconfig.json` changes needed.
+
 ## Raising an issue
 
 Please raise issues at
@@ -138,3 +149,46 @@ If it's not the above, See these issues:
 
 - https://github.com/styled-components/vscode-styled-components/issues/357
 - https://github.com/styled-components/vscode-styled-components/issues/343
+
+### No IntelliSense/highlighting in a conditional block inside my template?
+
+Wrap the nested template in the `css` helper — full highlighting and
+IntelliSense work that way today:
+
+```tsx
+import styled, { css } from "styled-components";
+
+const Card = styled.div`
+  ${(props) =>
+    props.primary &&
+    css`
+      color: white;
+    `}
+`;
+```
+
+A plain nested template (without `css`) is treated as an opaque string.
+
+### How do I turn off error checking, or use Stylelint instead?
+
+Set `"styled-components.validate": false` in your user or workspace
+settings. No `tsconfig.json` changes are needed.
+
+### Can I remove the MDN documentation blurbs from completions?
+
+Inside styled templates the documentation text comes bundled with the CSS
+language data and currently has no off-switch (the `css.hover.*` settings
+some guides mention only affect plain `.css` files).
+
+### Conflicts with a PostCSS extension?
+
+Both extensions inject grammars into the same template literals; the last
+one wins per scope and results vary by file. Disable one of the two for
+styled-components projects.
+
+### IntelliSense doesn't work in a Yarn PnP / Yarn SDK workspace?
+
+Run the **TypeScript: Select TypeScript Version** command and pick the
+workspace version (after `yarn dlx @yarnpkg/sdks vscode`). The plugin runs
+inside the TypeScript server, so VS Code must be using the workspace's
+TypeScript.
